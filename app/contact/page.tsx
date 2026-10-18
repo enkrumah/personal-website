@@ -21,7 +21,7 @@ export default function ContactPage() {
     <Container className="pb-24">
       <PageHeader
         eyebrow="Contact"
-        title="Let's Connect"
+        title="Tell me what you are working on."
         description="Conversations about AI, search, recommendations, consumer products, and product management are welcome."
       />
       <div className="flex flex-col gap-8 sm:flex-row sm:items-center">

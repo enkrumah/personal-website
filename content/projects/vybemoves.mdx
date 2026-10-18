@@ -55,7 +55,7 @@ The same query can take more than one path. Which path runs is a product decisio
 
 <SearchModes modes={searchModes} />
 
-Quick Match, Best Match, and Explore All are the Fast, Smart, and Hybrid paths. Fast is semantic retrieval optimized for speed. Best Match takes those semantic candidates and then asks a language model to rerank them. Hybrid keeps the semantic understanding and adds structured metadata, filtering, and ranking, including the live catalog. The diagram is the system they share.
+Quick Match, Best Match, and Explore All are the Fast, Smart, and Hybrid paths. Fast is semantic retrieval optimized for speed. Best Match takes those semantic candidates and then asks a language model to rerank them. Hybrid keeps the semantic understanding and adds structured metadata, filtering, and ranking, including the live catalog. The diagram follows that shared system, then the three paths.
 
 <SectionHeader
   id="architecture"
@@ -64,7 +64,11 @@ Quick Match, Best Match, and Explore All are the Fast, Smart, and Hybrid paths. 
   className="mt-16 sm:mt-20"
 />
 
-<ArchitectureDiagram steps={architectureSteps} technologies={technologies} />
+<SystemFlow
+  steps={architectureSteps}
+  modes={searchModes}
+  technologies={technologies}
+/>
 
 <SectionHeader
   id="decisions"

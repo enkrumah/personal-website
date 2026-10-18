@@ -5,28 +5,16 @@ export const home = {
   hero: {
     title: "Product Manager building AI-powered consumer products.",
     lede: "I work on personalization and recommendations at Expedia Group, after product roles at ServiceNow and Microsoft and software engineering at Apple.",
-    workLabel: "View Work",
-    productLabel: "Vybemoves",
-    resumeLabel: "Resume",
-    contactLabel: "Contact",
-  },
-  work: {
-    eyebrow: "Work",
-    title: "Selected work",
-    description:
-      "Products where search, recommendations, and taste are the experience.",
-    action: "All work",
+    caseStudyLabel: "View the case study",
   },
   experience: {
-    eyebrow: "Experience",
-    title: "Where the work has been",
-    description:
-      "Expedia Group is current. ServiceNow, Microsoft, and Apple are the roles before it.",
-    action: "View experience",
+    eyebrow: "Now",
+    action: "Full experience",
   },
   contact: {
-    title: "Working on AI, search, or the products people choose with?",
+    title:
+      "If you are working on search, recommendations, or how people choose, I would like to hear about it.",
     lede: "I am glad to talk about recommendations, consumer products, and product management.",
-    action: "Contact",
+    action: "Get in touch",
   },
 } as const;

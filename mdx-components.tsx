@@ -1,6 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import type { ComponentPropsWithoutRef } from "react";
 import { ArchitectureDiagram } from "@/components/ui/ArchitectureDiagram";
+import { SystemFlow } from "@/components/ui/SystemFlow";
 import { DetailList } from "@/components/ui/DetailList";
 import { PullQuote } from "@/components/ui/PullQuote";
 import { SearchModes } from "@/components/ui/SearchModes";
@@ -39,6 +40,7 @@ const components = {
   DetailList,
   SearchModes,
   ArchitectureDiagram,
+  SystemFlow,
   PullQuote,
 } satisfies MDXComponents;
 
