@@ -13,8 +13,11 @@ export function ContactBand() {
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
             {home.contact.lede}
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
             <CTA href="/contact">{home.contact.action}</CTA>
+            <CTA href="/resume" variant="text">
+              {home.contact.resumeLabel}
+            </CTA>
           </div>
         </div>
       </Container>

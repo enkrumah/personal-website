@@ -20,17 +20,18 @@ export const experience: Experience[] = [
   {
     id: "expedia",
     company: "Expedia Group",
-    role: "Product Manager, Personalization & Recommendations",
+    role: "Product Manager III, Personalization & Recommendations",
     location: "Seattle, WA",
     dates: "August 2026 to Present",
     current: true,
     preview:
-      "Trip Completion personalization and recommendations: discovery, ranking, and experimentation.",
+      "Trip Completion recommendations after lodging is booked: discovery, ranking, and experimentation.",
     summary:
-      "Owns product strategy and the roadmap for Trip Completion personalization and recommendations, so travelers can discover and add relevant products and services to trips they have already booked. Partners with engineering, data science, and analytics on discovery, ranking, and experimentation.",
+      "Owns Trip Completion recommendation and personalization work, started August 2026, so travelers who have already booked lodging can discover things to do and other parts of the trip. The scope is discovery, ranking, and experimentation, with engineering, design, data science, and analytics. Asked to think beyond a single recommendation module toward the broader trip experience.",
     highlights: [
-      "Own product strategy and roadmap for Trip Completion personalization and recommendations, helping travelers discover and add relevant products and services to their booked trips.",
-      "Partner with engineering, data science, and analytics to develop and evaluate recommendation experiences across discovery, ranking, and experimentation.",
+      "Own Trip Completion personalization and recommendations, started August 2026, helping travelers who have already booked lodging discover things to do and other parts of the trip.",
+      "Partner with engineering, design, data science, and analytics on discovery, ranking, experimentation, and evaluation of those recommendation experiences.",
+      "Asked to think beyond an individual recommendation module toward the broader trip experience.",
     ],
     focus: [
       "Trip Completion",
@@ -92,7 +93,7 @@ export const experience: Experience[] = [
       "Built test automation, scripts, and data dashboards for MacBook QA, and ran bug tracking and release operations across MacBook Air, Pro, and Mini during the Apple Silicon transition.",
     highlights: [
       "Built test automation frameworks, scripts, and data dashboards for MacBook QA, scaling device coverage from 1 to 5 configurations and improving defect resolution visibility during the Apple Silicon transition.",
-      "Managed bug tracking and release operations across MacBook Air, Pro, and Mini and partnered with Engineering Program Managers to prioritize fixes and release readiness for the largest Mac architecture transition in over a decade.",
+      "Ran bug tracking and release operations across MacBook Air, Pro, and Mini during the Apple Silicon transition, and worked with Engineering Program Managers on fixes and release readiness.",
     ],
     focus: ["MacBook QA", "Test automation", "Apple Silicon"],
   },
@@ -106,8 +107,8 @@ export const experience: Experience[] = [
     summary:
       "Developed automated reliability testing for macOS and iOS, including work that contributed to adopting CloudKit over Core Data, and built ad-hoc and regression testing with Apple engineers.",
     highlights: [
-      "Developed automated reliability testing for macOS and iOS, contributing to the strategic adoption of CloudKit over Core Data, improving performance by 20%.",
-      "Collaborated with Apple engineers to implement ad-hoc and regression testing frameworks, enhancing data integrity and bug isolation across Apple’s ecosystem.",
+      "Developed automated reliability testing for macOS and iOS, contributing to the adoption of CloudKit over Core Data and a 20% performance improvement.",
+      "Worked with Apple engineers on ad-hoc and regression testing, improving data integrity and bug isolation.",
     ],
     focus: ["macOS", "iOS", "CloudKit", "Reliability testing"],
   },
