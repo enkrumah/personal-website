@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { CTA } from "@/components/ui/CTA";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { experience } from "@/content/experience";
+import { home } from "@/content/home";
 import { projects } from "@/content/projects";
 import { site } from "@/content/site";
 import { personJsonLd } from "@/lib/jsonld";
@@ -26,12 +27,12 @@ export default function HomePage() {
       <section id="work" className="py-20 sm:py-28">
         <Container>
           <SectionHeader
-            eyebrow="Work"
-            title="Selected work"
-            description="Products where search, recommendations, and taste are the experience."
+            eyebrow={home.work.eyebrow}
+            title={home.work.title}
+            description={home.work.description}
             action={
               <CTA href="/work" variant="text">
-                All work
+                {home.work.action}
               </CTA>
             }
           />
@@ -43,12 +44,12 @@ export default function HomePage() {
       <section id="experience" className="border-t border-line py-20 sm:py-28">
         <Container>
           <SectionHeader
-            eyebrow="Experience"
-            title="Where the work has been"
-            description="Expedia Group is current. ServiceNow, Microsoft, and Apple are the roles before it."
+            eyebrow={home.experience.eyebrow}
+            title={home.experience.title}
+            description={home.experience.description}
             action={
               <CTA href="/experience" variant="text">
-                View experience
+                {home.experience.action}
               </CTA>
             }
           />

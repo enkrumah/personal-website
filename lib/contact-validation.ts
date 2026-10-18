@@ -49,3 +49,23 @@ export function validateContactFields(fields: ContactFields): ContactFieldErrors
 export function hasFieldErrors(errors: ContactFieldErrors) {
   return Object.keys(errors).length > 0;
 }
+
+function readString(value: unknown) {
+  return typeof value === "string" ? value : "";
+}
+
+/** Normalizes an unknown payload into the contact contract. Non-objects are rejected. */
+export function parseContactSubmission(input: unknown): ContactSubmission | null {
+  if (!input || typeof input !== "object" || Array.isArray(input)) return null;
+
+  const record = input as Record<string, unknown>;
+  const elapsedMs = record.elapsedMs;
+
+  return {
+    name: readString(record.name),
+    email: readString(record.email),
+    message: readString(record.message),
+    website: readString(record.website),
+    elapsedMs: typeof elapsedMs === "number" && Number.isFinite(elapsedMs) ? elapsedMs : 0,
+  };
+}

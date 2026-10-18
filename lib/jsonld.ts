@@ -1,6 +1,5 @@
 import {
   contactEmail,
-  contactPhone,
   emailIsPlaceholder,
   githubUrl,
   linkedInIsPlaceholder,
@@ -20,14 +19,13 @@ export function personJsonLd() {
     url: site.url,
     worksFor: {
       "@type": "Organization",
-      name: "Expedia Group",
+      name: site.employer,
     },
     knowsAbout: [...topics],
   };
 
   if (!emailIsPlaceholder()) {
     data.email = contactEmail;
-    data.telephone = contactPhone;
   }
 
   const sameAs = [githubUrl];

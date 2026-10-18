@@ -19,7 +19,9 @@ export function Footer() {
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-12 sm:flex-row sm:justify-between">
         <div>
           <p className="font-medium">{site.name}</p>
-          <p className="mt-1 text-sm text-muted">Product Manager at Expedia Group</p>
+          <p className="mt-1 text-sm text-muted">
+            {site.role} at {site.employer}
+          </p>
           <div className="mt-5 flex flex-col items-start gap-2 text-sm">
             <TrackedCTA
               href={`mailto:${contactEmail}`}

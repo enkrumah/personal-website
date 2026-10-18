@@ -77,10 +77,11 @@ export function CaseStudyLayout({
         {project.productUrl ? (
           <section className="mt-16 border-t border-line py-16">
             <h2 className="font-serif text-4xl tracking-tight">Visit {project.name}</h2>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              The product is live. Search, recommendations, and the feel of discovery
-              are easier to judge in the interface than in a write-up.
-            </p>
+            {project.visitNote ? (
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
+                {project.visitNote}
+              </p>
+            ) : null}
             <div className="mt-8">{visit}</div>
           </section>
         ) : null}

@@ -6,7 +6,6 @@ export function DetailList({ items }: { items: DetailItem[] }) {
       {items.map((item) => (
         <section
           key={item.title}
-          data-placeholder={item.placeholder ? "true" : undefined}
           className="grid gap-2 border-b border-line py-5 last:border-b-0 sm:grid-cols-12 sm:gap-6"
         >
           <h3 className="text-base font-medium text-foreground sm:col-span-4">

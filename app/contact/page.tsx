@@ -2,13 +2,7 @@ import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 import { Container } from "@/components/layout/Container";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { PageHeader } from "@/components/ui/PageHeader";
-import {
-  contactEmail,
-  contactPhone,
-  contactPhoneHref,
-  githubUrl,
-  linkedInUrl,
-} from "@/content/site";
+import { contactEmail, githubUrl, linkedInUrl } from "@/content/site";
 import { analyticsEvents } from "@/lib/analytics";
 import { createMetadata } from "@/lib/seo";
 
@@ -41,16 +35,6 @@ export default function ContactPage() {
                   variant="text"
                 >
                   {contactEmail}
-                </TrackedCTA>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.14em] text-subtle">
-                Phone
-              </dt>
-              <dd className="mt-2">
-                <TrackedCTA href={contactPhoneHref} variant="text">
-                  {contactPhone}
                 </TrackedCTA>
               </dd>
             </div>

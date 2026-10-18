@@ -1,20 +1,20 @@
+import type { ComponentType } from "react";
 import VybemovesCaseStudy from "@/content/projects/vybemoves.mdx";
 
 /**
- * Add a case here when a new MDX study ships.
- * Keep the slug in sync with `caseStudy: true` on the project.
+ * One registry for shipped MDX studies.
+ * A project with caseStudy: true still 404s until its component is listed here.
  */
-const caseStudySlugs = new Set(["vybemoves"]);
+const caseStudies: Record<string, ComponentType> = {
+  vybemoves: VybemovesCaseStudy,
+};
 
 export function hasCaseStudy(slug: string) {
-  return caseStudySlugs.has(slug);
+  return Object.prototype.hasOwnProperty.call(caseStudies, slug);
 }
 
 export function CaseStudyBody({ slug }: { slug: string }) {
-  switch (slug) {
-    case "vybemoves":
-      return <VybemovesCaseStudy />;
-    default:
-      return null;
-  }
+  const Study = caseStudies[slug];
+  if (!Study) return null;
+  return <Study />;
 }

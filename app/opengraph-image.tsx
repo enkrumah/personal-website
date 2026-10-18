@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
+import { site } from "@/content/site";
 
-export const alt = "Ebenezer Nkrumah, Product Manager";
+export const alt = `${site.name}, ${site.role}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -27,11 +28,11 @@ export default function OpenGraphImage() {
             fontFamily: "sans-serif",
           }}
         >
-          PRODUCT MANAGER
+          {site.role.toUpperCase()}
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 76, lineHeight: 1.05, fontFamily: "Georgia, serif" }}>
-            Ebenezer Nkrumah
+            {site.name}
           </div>
           <div
             style={{

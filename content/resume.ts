@@ -86,7 +86,7 @@ export const resumeProject = {
   ],
   highlights: [
     "Conceived, built, and launched an AI-powered movie discovery platform enabling natural-language search across a catalog of 900K+ movies.",
-    "Built a multi-stage AI-native search and recommendation pipeline using OpenAI embeddings, pgvector semantic search, hybrid retrieval, personalization signals, and GPT-4o reranking on a FastAPI, React, and PostgreSQL stack.",
+    "Built a multi-stage AI-native search and recommendation pipeline using OpenAI embeddings, pgvector semantic search, hybrid retrieval, personalization signals, and GPT-4o mini reranking on a FastAPI, React, and PostgreSQL stack.",
     "Designed search quality evaluation frameworks and A/B tests across Fast, Smart, and Hybrid search modes, leveraging NDCG, Precision, Recall, MRR, ground-truth evaluation, and LLM-as-a-Judge scoring to measure and improve retrieval and ranking performance.",
   ],
 } as const;

@@ -8,12 +8,11 @@ export type Project = {
   featured: boolean;
   caseStudy: boolean;
   productUrl?: string;
-  /**
-   * PLACEHOLDER: Point imageSrc at a file in /public/images when a screenshot exists.
-   * Leave it unset to keep the designed placeholder frame.
-   */
+  /** Public path, such as /images/name.jpeg. Omit it to use the designed frame. */
   imageSrc?: string;
   imageAlt: string;
+  /** Shown beside the product link at the end of a case study. */
+  visitNote?: string;
   productVisitedEvent?: AnalyticsEventName;
   caseStudyOpenedEvent?: AnalyticsEventName;
 };
@@ -28,7 +27,11 @@ export const projects: Project[] = [
     featured: true,
     caseStudy: true,
     productUrl: "https://vybemoves.com",
-    imageAlt: "Placeholder frame for a Vybemoves product screenshot.",
+    imageSrc: "/images/vybemoves-search-results.jpeg",
+    imageAlt:
+      "Vybemoves search results for holiday movies, with an AI analysis and a grid of matching titles.",
+    visitNote:
+      "The product is live. Search, recommendations, and the feel of discovery are easier to judge in the interface than in a write-up.",
     productVisitedEvent: analyticsEvents.vybemovesProductVisited,
     caseStudyOpenedEvent: analyticsEvents.vybemovesCaseStudyOpened,
   },

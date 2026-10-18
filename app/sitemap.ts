@@ -1,11 +1,10 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/content/projects";
+import { indexablePaths } from "@/content/site";
 import { absoluteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["/", "/work", "/experience", "/about", "/resume", "/contact"];
-
-  const staticEntries = routes.map((path) => ({
+  const staticEntries = indexablePaths().map((path) => ({
     url: absoluteUrl(path),
     changeFrequency: "monthly" as const,
     priority: path === "/" ? 1 : 0.7,

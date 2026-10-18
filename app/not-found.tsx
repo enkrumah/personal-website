@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/Container";
 import { CTA } from "@/components/ui/CTA";
+import { site } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Page not found | Ebenezer Nkrumah" },
+  title: { absolute: `Page not found | ${site.name}` },
   robots: { index: false, follow: false },
 };
 

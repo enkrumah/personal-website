@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 /**
- * PLACEHOLDER: This frame is shown until a project sets imageSrc.
- * Replace it with a real screenshot in /public/images.
+ * Designed frame used when a project has no imageSrc.
+ * A set imageSrc renders the file from /public instead.
  */
 export function ProjectVisual({
   name,

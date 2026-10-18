@@ -7,7 +7,6 @@ import type {
 /**
  * Structured Vybemoves case-study content.
  * Narrative prose lives in vybemoves.mdx.
- * Search this file for PLACEHOLDER before launch.
  */
 
 export const features: DetailItem[] = [

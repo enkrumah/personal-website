@@ -1,8 +1,11 @@
 import { processContactSubmission } from "@/lib/contact";
-import type { ContactResult, ContactSubmission } from "@/lib/contact-validation";
+import {
+  parseContactSubmission,
+  type ContactResult,
+} from "@/lib/contact-validation";
 
 /**
- * Future HTTP seam for the contact form.
+ * HTTP seam for the contact form.
  * The form itself calls the server action in app/contact/actions.ts.
  * Both paths use processContactSubmission, so an email provider only needs
  * CONTACT_WEBHOOK_URL.
@@ -35,7 +38,9 @@ export async function POST(request: Request) {
     );
   }
 
-  if (!body || typeof body !== "object") {
+  const submission = parseContactSubmission(body);
+
+  if (!submission) {
     return Response.json(
       {
         status: "invalid",
@@ -44,15 +49,6 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
-
-  const record = body as Record<string, unknown>;
-  const submission: ContactSubmission = {
-    name: typeof record.name === "string" ? record.name : "",
-    email: typeof record.email === "string" ? record.email : "",
-    message: typeof record.message === "string" ? record.message : "",
-    website: typeof record.website === "string" ? record.website : "",
-    elapsedMs: typeof record.elapsedMs === "number" ? record.elapsedMs : 0,
-  };
 
   const result = await processContactSubmission(submission);
 

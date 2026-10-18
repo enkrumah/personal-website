@@ -14,6 +14,7 @@ export type WritingPost = {
  * 2. Add the post metadata here
  * 3. Add app/writing/page.tsx and app/writing/[slug]/page.tsx,
  *    following app/work/[slug]/page.tsx
+ * 4. Add the routes to the page lists in content/site.ts so the sitemap includes them
  *
  * getNavItems() reads this array and will show Writing on its own.
  */
