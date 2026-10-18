@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #f3f0ea;
+  --foreground: #1a1814;
+  --muted: #5c574f;
+  --subtle: #6f6a62;
+  --card: #faf8f4;
+  --line: rgb(26 24 20 / 0.12);
+  --accent: #1f3d34;
+  --accent-foreground: #f6f3ee;
+  --highlight: #e9e2d6;
+  --danger: #8f3d32;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #12110f;
+  --foreground: #f3efe8;
+  --muted: #c7c1b7;
+  --subtle: #b7b1a7;
+  --card: #1b1a17;
+  --line: rgb(243 239 232 / 0.14);
+  --accent: #e4d3b8;
+  --accent-foreground: #161412;
+  --highlight: #26241f;
+  --danger: #f0b2a8;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-newsreader);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #e4d3bc;
+  color: #1a1814;
+}
+
+.dark ::selection {
+  background: #5a4c3b;
+  color: #f3efe8;
+}
+
+:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+}

@@ -1,0 +1,102 @@
+import {
+  architectureSteps,
+  decisions,
+  evaluation,
+  features,
+  results,
+  searchModes,
+  technologies,
+} from "@/content/projects/vybemoves-data";
+
+<SectionHeader
+  id="overview"
+  eyebrow="Overview"
+  title="Find a film from a feeling"
+/>
+
+Vybemoves is an AI-powered movie discovery and recommendation application for the moment you know the mood better than the title.
+
+People rarely start a movie night with a perfect query. They start with a constraint, a tone, or a sense of what they want to avoid. Vybemoves treats that as the product: understand the intent, retrieve films that fit, and let taste sharpen the next result.
+
+<SectionHeader
+  id="problem"
+  eyebrow="Problem"
+  title="Lookup is not discovery"
+  className="mt-20"
+/>
+
+Traditional movie search works when the title, actor, or genre is already known. It struggles with natural-language intent.
+
+<PullQuote>Something dark and cerebral but not depressing.</PullQuote>
+
+That sentence is a preference with a negative constraint. Keyword search and genre filters collapse it into a broad bucket, such as thriller or drama, and miss the part that matters. The discovery problem is mapping how people actually talk about films onto a catalog organized by metadata.
+
+<SectionHeader
+  id="product"
+  eyebrow="Product"
+  title="From a sentence to something worth watching"
+  className="mt-20"
+/>
+
+The product covers the path from an open request to a choice someone can act on.
+
+<DetailList items={features} />
+
+<SectionHeader
+  id="search-modes"
+  eyebrow="Search modes"
+  title="Three ways to trade depth for speed"
+  className="mt-20"
+/>
+
+The same query can take more than one path. The modes are a product decision about how much work the system should do before it answers.
+
+<SearchModes modes={searchModes} />
+
+Quick Match is one embedded query. Best Match continues into multi-query retrieval and GPT-4o-mini reranking. Explore All uses the detected intent to search the wider catalog. The résumé names the same three paths Fast, Smart, and Hybrid. The diagram below is the full system those modes draw from.
+
+<SectionHeader
+  id="architecture"
+  eyebrow="Technical architecture"
+  title="How a query becomes a ranking"
+  className="mt-20"
+/>
+
+<ArchitectureDiagram steps={architectureSteps} technologies={technologies} />
+
+The interface is React. The service is FastAPI. Semantic retrieval runs in PostgreSQL with pgvector, using OpenAI embeddings. TMDB and OMDB supply catalog metadata. The service is set up to run on Railway.
+
+<SectionHeader
+  id="evaluation"
+  eyebrow="Evaluation"
+  title="Quality has to be tested, not assumed"
+  className="mt-20"
+/>
+
+Retrieval can look plausible and still be wrong. The system is set up so changes to search and ranking can be judged before and after they ship.
+
+<DetailList items={evaluation} />
+
+Specific scores and experiment readouts are not included here.
+
+<SectionHeader
+  id="decisions"
+  eyebrow="Product decisions"
+  title="The tradeoffs inside the ranking"
+  className="mt-20"
+/>
+
+These are the choices the current product makes. They come from the Vybemoves codebase, not from a guessed policy.
+
+<DetailList items={decisions} />
+
+<SectionHeader
+  id="results"
+  eyebrow="Results and learnings"
+  title="Reserved for evidence"
+  className="mt-20"
+/>
+
+Usage figures, retention, and experiment scores are not published. What follows is only what the product and the earlier prototype actually document.
+
+<DetailList items={results} />
