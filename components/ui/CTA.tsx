@@ -25,6 +25,8 @@ type CTAProps = {
   children: ReactNode;
   variant?: CtaVariant;
   external?: boolean;
+  /** Keeps the new-tab behavior without the arrow, for inline text links. */
+  showExternalIcon?: boolean;
   download?: string;
   className?: string;
   onClick?: () => void;
@@ -35,6 +37,7 @@ export function CTA({
   children,
   variant = "primary",
   external = false,
+  showExternalIcon = true,
   download,
   className,
   onClick,
@@ -43,7 +46,9 @@ export function CTA({
   const content = (
     <>
       {children}
-      {external ? <ArrowUpRight className="h-4 w-4" aria-hidden /> : null}
+      {external && showExternalIcon ? (
+        <ArrowUpRight className="h-4 w-4" aria-hidden />
+      ) : null}
       {external ? <span className="sr-only"> (opens in a new tab)</span> : null}
     </>
   );

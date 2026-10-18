@@ -16,7 +16,7 @@ export function personJsonLd() {
     name: site.name,
     jobTitle: site.role,
     description: site.description,
-    url: site.url,
+    ...(site.url ? { url: site.url } : {}),
     worksFor: {
       "@type": "Organization",
       name: site.employer,
@@ -48,7 +48,7 @@ export function projectJsonLd(project: Project) {
     author: {
       "@type": "Person",
       name: site.name,
-      url: site.url,
+      ...(site.url ? { url: site.url } : {}),
     },
   };
 }

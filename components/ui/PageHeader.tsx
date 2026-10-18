@@ -1,3 +1,5 @@
+import { cn } from "@/lib/cn";
+
 export function PageHeader({
   eyebrow,
   title,
@@ -8,13 +10,18 @@ export function PageHeader({
   description?: string;
 }) {
   return (
-    <header className="pb-12 pt-16 sm:pt-20">
+    <header className="pt-16 pb-16 sm:pt-20 sm:pb-20">
       {eyebrow ? (
         <p className="text-xs font-medium uppercase tracking-[0.16em] text-subtle">
           {eyebrow}
         </p>
       ) : null}
-      <h1 className="mt-3 max-w-4xl font-serif text-4xl tracking-tight text-balance sm:text-6xl">
+      <h1
+        className={cn(
+          "max-w-4xl font-serif text-4xl tracking-tight text-balance sm:text-6xl",
+          eyebrow && "mt-3",
+        )}
+      >
         {title}
       </h1>
       {description ? (

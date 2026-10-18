@@ -25,7 +25,7 @@ type Status =
   | { state: "unconfigured" }
   | { state: "error"; message: string };
 
-export function ContactForm() {
+export function ContactForm({ deliveryReady }: { deliveryReady: boolean }) {
   const [fields, setFields] = useState<ContactFields>(emptyFields);
   const [website, setWebsite] = useState("");
   const [errors, setErrors] = useState<ContactFieldErrors>({});
@@ -33,6 +33,7 @@ export function ContactForm() {
   const startedAt = useRef(0);
   const statusRef = useRef<HTMLDivElement>(null);
   const formId = useId();
+  const unavailableNoteId = `${formId}-unavailable`;
 
   useEffect(() => {
     startedAt.current = Date.now();
@@ -55,6 +56,8 @@ export function ContactForm() {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!deliveryReady) return;
+
     const nextErrors = validateContactFields(fields);
     setErrors(nextErrors);
 
@@ -82,6 +85,7 @@ export function ContactForm() {
       setFields(emptyFields);
       setWebsite("");
       setStatus({ state: "sent" });
+      track(analyticsEvents.contactSubmitted, { channel: "form" });
       return;
     }
 
@@ -101,7 +105,7 @@ export function ContactForm() {
         role="status"
         className="border border-line bg-card px-6 py-8"
       >
-        <h2 className="font-serif text-3xl tracking-tight">Message sent</h2>
+        <h3 className="font-serif text-3xl tracking-tight">Message sent</h3>
         <p className="mt-3 max-w-md text-muted">
           Thank you. I will read it and reply.
         </p>
@@ -145,6 +149,26 @@ export function ContactForm() {
       {hasFieldErrors(errors) ? (
         <p role="alert" className="mb-5 border border-danger px-4 py-3 text-sm text-danger">
           Check the highlighted fields and try again.
+        </p>
+      ) : null}
+
+      {!deliveryReady ? (
+        <p
+          id={unavailableNoteId}
+          className="mb-5 border border-line bg-card px-4 py-4 text-sm leading-6 text-muted"
+        >
+          <span className="font-medium text-foreground">Email is the way to reach me for now.</span>{" "}
+          This form is not connected to an inbox yet. Use{" "}
+          <a
+            href={`mailto:${contactEmail}`}
+            className="underline decoration-line underline-offset-4"
+            onClick={() =>
+              track(analyticsEvents.contactInitiated, { channel: "email" })
+            }
+          >
+            {contactEmail}
+          </a>{" "}
+          until delivery is connected.
         </p>
       ) : null}
 
@@ -235,7 +259,8 @@ export function ContactForm() {
 
       <button
         type="submit"
-        disabled={status.state === "submitting"}
+        disabled={!deliveryReady || status.state === "submitting"}
+        aria-describedby={!deliveryReady ? unavailableNoteId : undefined}
         className="mt-6 inline-flex items-center justify-center bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors duration-200 hover:bg-accent hover:text-accent-foreground disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status.state === "submitting" ? "Sending" : "Send message"}

@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/ui/ContactForm";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { contactEmail, githubUrl, linkedInUrl } from "@/content/site";
 import { analyticsEvents } from "@/lib/analytics";
+import { contactDeliveryConfigured } from "@/lib/contact";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -14,62 +15,46 @@ export const metadata = createMetadata({
 });
 
 export default function ContactPage() {
+  const formReady = contactDeliveryConfigured();
+
   return (
     <Container className="pb-24">
       <PageHeader
+        eyebrow="Contact"
         title="Let's Connect"
         description="Conversations about AI, search, recommendations, consumer products, and product management are welcome."
       />
-      <div className="grid gap-12 lg:grid-cols-12">
-        <div className="lg:col-span-4">
-          <dl className="space-y-6">
-            <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.14em] text-subtle">
-                Email
-              </dt>
-              <dd className="mt-2">
-                <TrackedCTA
-                  href={`mailto:${contactEmail}`}
-                  event={analyticsEvents.contactInitiated}
-                  properties={{ channel: "email" }}
-                  variant="text"
-                >
-                  {contactEmail}
-                </TrackedCTA>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.14em] text-subtle">
-                LinkedIn
-              </dt>
-              <dd className="mt-2">
-                <TrackedCTA
-                  href={linkedInUrl}
-                  event={analyticsEvents.linkedInVisited}
-                  external
-                  variant="text"
-                >
-                  LinkedIn
-                </TrackedCTA>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-medium uppercase tracking-[0.14em] text-subtle">
-                GitHub
-              </dt>
-              <dd className="mt-2">
-                <TrackedCTA href={githubUrl} external variant="text">
-                  GitHub
-                </TrackedCTA>
-              </dd>
-            </div>
-          </dl>
+      <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
+        <TrackedCTA
+          href={`mailto:${contactEmail}`}
+          event={analyticsEvents.contactInitiated}
+          properties={{ channel: "email" }}
+        >
+          {contactEmail}
+        </TrackedCTA>
+        <div className="flex gap-6 text-sm">
+          <TrackedCTA
+            href={linkedInUrl}
+            event={analyticsEvents.linkedInVisited}
+            external
+            variant="text"
+          >
+            LinkedIn
+          </TrackedCTA>
+          <TrackedCTA
+            href={githubUrl}
+            event={analyticsEvents.githubVisited}
+            external
+            variant="text"
+          >
+            GitHub
+          </TrackedCTA>
         </div>
-        <div className="lg:col-span-8">
-          <h2 className="font-serif text-3xl tracking-tight">Send a note</h2>
-          <div className="mt-6">
-            <ContactForm />
-          </div>
+      </div>
+      <div className="mt-16 max-w-xl border-t border-line pt-16">
+        <h2 className="font-serif text-3xl tracking-tight">Send a note</h2>
+        <div className="mt-6">
+          <ContactForm deliveryReady={formReady} />
         </div>
       </div>
     </Container>

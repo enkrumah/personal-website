@@ -60,11 +60,11 @@ export function ProjectCard({
                 external
                 variant="secondary"
               >
-                Visit Product
+                {project.visitLabel ?? "Visit product"}
               </TrackedCTA>
             ) : (
               <CTA href={project.productUrl} external variant="secondary">
-                Visit Product
+                {project.visitLabel ?? "Visit product"}
               </CTA>
             )
           ) : null}

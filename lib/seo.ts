@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { site } from "@/content/site";
 
 export function absoluteUrl(path: string) {
+  if (!site.url) return undefined;
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${site.url}${normalized === "/" ? "/" : normalized}`;
 }
@@ -21,11 +22,11 @@ export function createMetadata({
   return {
     title: { absolute: fullTitle },
     description,
-    alternates: { canonical: url },
+    ...(url ? { alternates: { canonical: url } } : {}),
     openGraph: {
       title: fullTitle,
       description,
-      url,
+      ...(url ? { url } : {}),
       siteName: site.name,
       type: "website",
       locale: "en_US",

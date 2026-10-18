@@ -1,11 +1,11 @@
 import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
 
-export const alt = `${site.name}, ${site.role}`;
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-
-export default function OpenGraphImage() {
+/**
+ * Open Graph image. Linked from metadata only when NEXT_PUBLIC_SITE_URL is
+ * set, so a production build without that variable does not advertise localhost.
+ */
+export function GET() {
   return new ImageResponse(
     (
       <div
@@ -49,6 +49,6 @@ export default function OpenGraphImage() {
         </div>
       </div>
     ),
-    { ...size },
+    { width: 1200, height: 630 },
   );
 }

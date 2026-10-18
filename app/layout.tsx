@@ -20,8 +20,19 @@ const serif = Newsreader({
   display: "swap",
 });
 
+const socialImages = site.url
+  ? [
+      {
+        url: `${site.url}/og`,
+        width: 1200,
+        height: 630,
+        alt: `${site.name}, ${site.role}`,
+      },
+    ]
+  : undefined;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  ...(site.url ? { metadataBase: new URL(site.url) } : {}),
   title: {
     default: site.title,
     template: `%s | ${site.name}`,
@@ -36,12 +47,14 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.title,
     description: site.description,
-    url: site.url,
+    ...(site.url ? { url: site.url } : {}),
+    ...(socialImages ? { images: socialImages } : {}),
   },
   twitter: {
     card: "summary_large_image",
     title: site.title,
     description: site.description,
+    ...(socialImages ? { images: socialImages } : {}),
   },
   robots: {
     index: true,

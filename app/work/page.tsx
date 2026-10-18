@@ -1,7 +1,9 @@
+import { AnalyticsEvent } from "@/components/analytics/AnalyticsEvent";
 import { Container } from "@/components/layout/Container";
 import { ProjectList } from "@/components/projects/ProjectList";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { projects } from "@/content/projects";
+import { analyticsEvents } from "@/lib/analytics";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata = createMetadata({
@@ -20,6 +22,7 @@ export default function WorkPage() {
         description="A portfolio of product work. Vybemoves is the flagship: movie discovery built around intent, retrieval, and taste."
       />
       <ProjectList projects={projects} />
+      <AnalyticsEvent event={analyticsEvents.workViewed} />
     </Container>
   );
 }

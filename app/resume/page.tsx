@@ -1,4 +1,6 @@
+import { TrackedCTA } from "@/components/analytics/TrackedCTA";
 import { Container } from "@/components/layout/Container";
+import { CompanyMark } from "@/components/resume/CompanyMark";
 import { ResumeActions } from "@/components/ui/ResumeActions";
 import { experience } from "@/content/experience";
 import {
@@ -16,6 +18,7 @@ import {
   linkedInUrl,
   site,
 } from "@/content/site";
+import { analyticsEvents } from "@/lib/analytics";
 import { createMetadata } from "@/lib/seo";
 import Image from "next/image";
 
@@ -30,20 +33,20 @@ export default function ResumePage() {
   return (
     <Container className="pb-24">
       <article>
-        <header className="grid items-start gap-8 border-b border-line pt-12 pb-12 sm:pt-16 lg:grid-cols-12 lg:items-center lg:gap-14 lg:pt-20 lg:pb-16">
-          <figure className="lg:col-span-5">
+        <header className="grid items-start gap-8 pt-16 pb-16 sm:pt-20 sm:pb-20 lg:grid-cols-12 lg:gap-8">
+          <figure className="lg:col-span-4">
             <div className="relative aspect-[5/4] overflow-hidden bg-highlight lg:aspect-[4/5]">
               <Image
                 src="/images/ebenezer-nkrumah.jpg"
                 alt="Ebenezer Nkrumah"
                 fill
-                priority
+                preload
                 sizes="(min-width: 1024px) 38vw, 100vw"
                 className="object-cover object-[center_22%]"
               />
             </div>
           </figure>
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-8">
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-subtle">
               Résumé
             </p>
@@ -61,29 +64,39 @@ export default function ResumePage() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${contactEmail}`} className="hover:underline">
+                <TrackedCTA
+                  href={`mailto:${contactEmail}`}
+                  event={analyticsEvents.contactInitiated}
+                  properties={{ channel: "resume" }}
+                  variant="text"
+                  className="text-sm"
+                >
                   {contactEmail}
-                </a>
+                </TrackedCTA>
               </li>
               <li>
-                <a
+                <TrackedCTA
                   href={linkedInUrl}
-                  className="hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  event={analyticsEvents.linkedInVisited}
+                  external
+                  showExternalIcon={false}
+                  variant="text"
+                  className="text-sm"
                 >
                   linkedin.com/in/ebenezernkrumaha
-                </a>
+                </TrackedCTA>
               </li>
               <li>
-                <a
+                <TrackedCTA
                   href={githubUrl}
-                  className="hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  event={analyticsEvents.githubVisited}
+                  external
+                  showExternalIcon={false}
+                  variant="text"
+                  className="text-sm"
                 >
                   github.com/enkrumah
-                </a>
+                </TrackedCTA>
               </li>
             </ul>
             <div className="mt-8">
@@ -92,7 +105,7 @@ export default function ResumePage() {
           </div>
         </header>
 
-        <section className="pt-12" aria-labelledby="resume-experience">
+        <section className="border-t border-line pt-16 sm:pt-20" aria-labelledby="resume-experience">
           <h2
             id="resume-experience"
             className="font-serif text-3xl tracking-tight"
@@ -109,7 +122,10 @@ export default function ResumePage() {
                   <p className="text-xs font-medium uppercase tracking-[0.14em] text-subtle">
                     {item.dates}
                   </p>
-                  <p className="mt-2 font-medium">{item.company}</p>
+                  <p className="mt-2 flex items-center gap-2 font-medium">
+                    <CompanyMark company={item.company} />
+                    {item.company}
+                  </p>
                   <p className="mt-1 text-sm text-muted">{item.location}</p>
                 </div>
                 <div className="sm:col-span-8">
@@ -133,7 +149,7 @@ export default function ResumePage() {
         </section>
 
         <section
-          className="border-t border-line pt-12"
+          className="mt-16 border-t border-line pt-16 sm:mt-20 sm:pt-20"
           aria-labelledby="resume-education"
         >
           <h2
@@ -175,7 +191,7 @@ export default function ResumePage() {
         </section>
 
         <section
-          className="border-t border-line pt-12"
+          className="mt-16 border-t border-line pt-16 sm:mt-20 sm:pt-20"
           aria-labelledby="resume-skills"
         >
           <h2 id="resume-skills" className="font-serif text-3xl tracking-tight">
@@ -196,7 +212,7 @@ export default function ResumePage() {
         </section>
 
         <section
-          className="border-t border-line pt-12"
+          className="mt-16 border-t border-line pt-16 sm:mt-20 sm:pt-20"
           aria-labelledby="resume-project"
         >
           <h2
@@ -214,14 +230,20 @@ export default function ResumePage() {
               {resumeProject.links.map((link, index) => (
                 <span key={link.href}>
                   {index > 0 ? <span className="text-subtle"> · </span> : null}
-                  <a
+                  <TrackedCTA
                     href={link.href}
-                    className="hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    event={
+                      link.href.includes("github.com")
+                        ? analyticsEvents.githubVisited
+                        : analyticsEvents.vybemovesProductVisited
+                    }
+                    external
+                    showExternalIcon={false}
+                    variant="text"
+                    className="text-sm"
                   >
                     {link.label}
-                  </a>
+                  </TrackedCTA>
                 </span>
               ))}
             </p>
@@ -239,7 +261,7 @@ export default function ResumePage() {
         </section>
 
         <section
-          className="border-t border-line pt-12"
+          className="mt-16 border-t border-line pt-16 sm:mt-20 sm:pt-20"
           aria-labelledby="resume-certifications"
         >
           <h2

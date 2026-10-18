@@ -18,6 +18,7 @@ export function CaseStudyLayout({
   project: Project;
   children: ReactNode;
 }) {
+  const visitLabel = project.visitLabel ?? "Visit product";
   const visit = project.productUrl ? (
     project.productVisitedEvent ? (
       <TrackedCTA
@@ -25,11 +26,11 @@ export function CaseStudyLayout({
         event={project.productVisitedEvent}
         external
       >
-        Visit Product
+        {visitLabel}
       </TrackedCTA>
     ) : (
       <CTA href={project.productUrl} external>
-        Visit Product
+        {visitLabel}
       </CTA>
     )
   ) : null;
@@ -37,7 +38,7 @@ export function CaseStudyLayout({
   return (
     <article>
       <Container>
-        <div className="pt-10">
+        <div className="pt-16 sm:pt-20">
           <Link
             href="/work"
             className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground"
@@ -76,7 +77,9 @@ export function CaseStudyLayout({
         <div className="pt-4 pb-4">{children}</div>
         {project.productUrl ? (
           <section className="mt-16 border-t border-line py-16">
-            <h2 className="font-serif text-4xl tracking-tight">Visit {project.name}</h2>
+            <h2 className="font-serif text-4xl tracking-tight text-balance">
+              Try {project.name}
+            </h2>
             {project.visitNote ? (
               <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
                 {project.visitNote}

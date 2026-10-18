@@ -1,9 +1,10 @@
 import {
   architectureSteps,
+  building,
   decisions,
   evaluation,
+  evaluationLoop,
   features,
-  results,
   searchModes,
   technologies,
 } from "@/content/projects/vybemoves-data";
@@ -12,91 +13,90 @@ import {
   id="overview"
   eyebrow="Overview"
   title="Find a film from a feeling"
+  className="mt-16 sm:mt-20"
 />
 
-Vybemoves is an AI-powered movie discovery and recommendation application for the moment you know the mood better than the title.
+Vybemoves is an AI-powered movie discovery application for the moment you know the mood better than the title. Traditional search works when the title, actor, or genre is already known. It fails for intent. The product is designed around expressing that intent in ordinary language. It is live at [vybemoves.com](https://vybemoves.com).
 
-People rarely start a movie night with a perfect query. They start with a constraint, a tone, or a sense of what they want to avoid. Vybemoves treats that as the product: understand the intent, retrieve films that fit, and let taste sharpen the next result.
+People rarely start a movie night with a perfect query. They start with a constraint, a tone, or a sense of what they want to avoid. The product treats that as the request: understand the intent, retrieve films that fit, and let taste sharpen the next result.
 
 <SectionHeader
   id="problem"
   eyebrow="Problem"
   title="Lookup is not discovery"
-  className="mt-20"
+  className="mt-16 sm:mt-20"
 />
 
-Traditional movie search works when the title, actor, or genre is already known. It struggles with natural-language intent.
+Traditional movie search works when the title, actor, or genre is already known. It struggles with natural-language intent. Someone can know the experience they want without knowing the title.
 
-<PullQuote>Something dark and cerebral but not depressing.</PullQuote>
+<PullQuote>Something dark and cerebral, but not depressing.</PullQuote>
 
-That sentence is a preference with a negative constraint. Keyword search and genre filters collapse it into a broad bucket, such as thriller or drama, and miss the part that matters. The discovery problem is mapping how people actually talk about films onto a catalog organized by metadata.
+That sentence is a preference with a negative constraint. Intent can include mood, themes, era, pacing, emotional tone, genre, combinations of those, and what to leave out. Keyword search and genre filters collapse it into a broad bucket, such as thriller or drama, and miss the part that matters. This is search and recommendation, not a catalog lookup.
 
 <SectionHeader
   id="product"
   eyebrow="Product"
   title="From a sentence to something worth watching"
-  className="mt-20"
+  className="mt-16 sm:mt-20"
 />
 
-The product covers the path from an open request to a choice someone can act on.
+The product covers the path from an open request to a choice someone can act on. The search results above are the one product view captured so far.
 
 <DetailList items={features} />
 
 <SectionHeader
   id="search-modes"
-  eyebrow="Search modes"
+  eyebrow="Search strategy"
   title="Three ways to trade depth for speed"
-  className="mt-20"
+  className="mt-16 sm:mt-20"
 />
 
-The same query can take more than one path. The modes are a product decision about how much work the system should do before it answers.
+The same query can take more than one path. Which path runs is a product decision: how much relevance is worth the latency and the cost before the system answers.
 
 <SearchModes modes={searchModes} />
 
-Quick Match is one embedded query. Best Match continues into multi-query retrieval and GPT-4o-mini reranking. Explore All uses the detected intent to search the wider catalog. The résumé names the same three paths Fast, Smart, and Hybrid. The diagram below is the full system those modes draw from.
+Quick Match, Best Match, and Explore All are the Fast, Smart, and Hybrid paths. Fast is semantic retrieval optimized for speed. Best Match takes those semantic candidates and then asks a language model to rerank them. Hybrid keeps the semantic understanding and adds structured metadata, filtering, and ranking, including the live catalog. The diagram is the system they share.
 
 <SectionHeader
   id="architecture"
   eyebrow="Technical architecture"
   title="How a query becomes a ranking"
-  className="mt-20"
+  className="mt-16 sm:mt-20"
 />
 
 <ArchitectureDiagram steps={architectureSteps} technologies={technologies} />
-
-The interface is React. The service is FastAPI. Semantic retrieval runs in PostgreSQL with pgvector, using OpenAI embeddings. TMDB and OMDB supply catalog metadata. The service is set up to run on Railway.
-
-<SectionHeader
-  id="evaluation"
-  eyebrow="Evaluation"
-  title="Quality has to be tested, not assumed"
-  className="mt-20"
-/>
-
-Retrieval can look plausible and still be wrong. The system is set up so changes to search and ranking can be judged before and after they ship.
-
-<DetailList items={evaluation} />
-
-Specific scores and experiment readouts are not included here.
 
 <SectionHeader
   id="decisions"
   eyebrow="Product decisions"
   title="The tradeoffs inside the ranking"
-  className="mt-20"
+  className="mt-16 sm:mt-20"
 />
-
-These are the choices the current product makes. They come from the Vybemoves codebase, not from a guessed policy.
 
 <DetailList items={decisions} />
 
 <SectionHeader
-  id="results"
-  eyebrow="Results and learnings"
-  title="Reserved for evidence"
-  className="mt-20"
+  id="evaluation"
+  eyebrow="Evaluation"
+  title="Quality has to be tested, not assumed"
+  className="mt-16 sm:mt-20"
 />
 
-Usage figures, retention, and experiment scores are not published. What follows is only what the product and the earlier prototype actually document.
+A plausible film is not a good result. Quality is whether the ranking fits the intent, and that has to be tested before and after a change ships. Scores and experiment readouts are not published.
 
-<DetailList items={results} />
+<ArchitectureDiagram
+  steps={evaluationLoop}
+  caption="Evaluation loop"
+  note="Re-evaluation runs the query set again. The loop is part of building the product, not a report written afterward."
+/>
+
+<DetailList items={evaluation} />
+
+<SectionHeader
+  id="building"
+  eyebrow="Building"
+  title="What the build made concrete"
+  className="mt-16 sm:mt-20"
+/>
+
+<DetailList items={building} />

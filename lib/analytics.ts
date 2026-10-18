@@ -10,15 +10,22 @@
  * };
  *
  * Every event is also dispatched as "portfolio:analytics" on window.
+ *
+ * Names already in use stay as they are:
+ * - vybemoves_case_study_viewed → vybemoves_case_study_opened
+ * - vybemoves_visited → vybemoves_product_visited
  */
 
 export const analyticsEvents = {
+  workViewed: "work_viewed",
   vybemovesCaseStudyOpened: "vybemoves_case_study_opened",
   vybemovesProductVisited: "vybemoves_product_visited",
   resumeViewed: "resume_viewed",
   resumeDownloaded: "resume_downloaded",
-  contactInitiated: "contact_initiated",
   linkedInVisited: "linkedin_visited",
+  githubVisited: "github_visited",
+  contactInitiated: "contact_initiated",
+  contactSubmitted: "contact_submitted",
 } as const;
 
 export type AnalyticsEventName =

@@ -19,6 +19,10 @@ import {
 
 const MIN_ELAPSED_MS = 750;
 
+export function contactDeliveryConfigured() {
+  return Boolean(process.env.CONTACT_WEBHOOK_URL);
+}
+
 export async function processContactSubmission(input: unknown): Promise<ContactResult> {
   const submission = parseContactSubmission(input);
 

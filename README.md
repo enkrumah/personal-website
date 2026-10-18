@@ -6,7 +6,7 @@ Personal portfolio. Next.js, TypeScript, Tailwind CSS, and MDX. Content is stati
 
 `app/` is the App Router. Each route composes layout and content. `app/contact/actions.ts` and `app/api/contact/route.ts` both call `lib/contact.ts`.
 
-`content/` holds the site facts, résumé, experience, about, projects, and the Vybemoves case study (`vybemoves.mdx` plus `vybemoves-data.ts`). Writing stays out of the nav until `content/writing/index.ts` has posts and the matching routes exist.
+`content/` holds the site facts, résumé, experience, about, projects, and the Vybemoves case study (`vybemoves.mdx` plus `vybemoves-data.ts`). The public product name is Vybemoves, live at vybemoves.com. Writing stays out of the nav until `content/writing/index.ts` has posts and the matching routes exist.
 
 `components/` is presentation. Client components are the nav, theme, contact form, résumé actions, and analytics clicks.
 
@@ -33,8 +33,8 @@ npm run build
 
 Copy `.env.example` only if you have real values. Leave both unset otherwise.
 
-- `NEXT_PUBLIC_SITE_URL` — production origin, no trailing slash. Canonical URLs use `http://localhost:3000` until this is set.
-- `CONTACT_WEBHOOK_URL` — JSON endpoint `{ name, email, message, source }`. Until it is set, the form validates and asks people to email.
+- `NEXT_PUBLIC_SITE_URL` — production origin, no trailing slash. Development uses `http://localhost:3000` for canonical URLs, Open Graph, the sitemap, and JSON-LD. A production build without this variable omits those absolute URLs instead of advertising localhost. The Open Graph image is served at `/og` and is only referenced once this is set.
+- `CONTACT_WEBHOOK_URL` — JSON endpoint `{ name, email, message, source }`. Until it is set, the form stays on the page with submit disabled and asks people to email. It does not pretend a message was sent.
 
 Do not commit `.env`.
 

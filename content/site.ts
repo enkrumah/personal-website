@@ -8,14 +8,32 @@ export const site = {
   description:
     "Product manager building AI-powered consumer products across search, recommendations, personalization, product discovery, and consumer technology.",
   /**
-   * Canonical origin. Set NEXT_PUBLIC_SITE_URL when a production domain
-   * exists. Until then, metadata uses the local default.
+   * Canonical origin. Set NEXT_PUBLIC_SITE_URL to the production origin,
+   * with no trailing slash. Development uses localhost. Production does not:
+   * a missing value omits absolute canonical, Open Graph, sitemap, and JSON-LD
+   * URLs instead of advertising localhost.
    */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(
-    /\/$/,
-    "",
-  ),
+  url: resolveSiteUrl(),
 } as const;
+
+/**
+ * NEXT_PUBLIC_SITE_URL wins when it is set. Otherwise localhost is only for
+ * development. Production, including a Vercel or Railway production signal,
+ * returns undefined so metadata cannot fall back to localhost.
+ */
+function resolveSiteUrl(): string | undefined {
+  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
+  if (configured) return configured;
+
+  const production =
+    process.env.NODE_ENV === "production" ||
+    process.env.VERCEL_ENV === "production" ||
+    process.env.RAILWAY_ENVIRONMENT === "production" ||
+    process.env.RAILWAY_ENVIRONMENT_NAME === "production";
+
+  if (production) return undefined;
+  return "http://localhost:3000";
+}
 
 export type NavItem = {
   href: string;

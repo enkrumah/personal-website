@@ -17,14 +17,15 @@ export function ProjectVisual({
 }) {
   if (imageSrc) {
     return (
-      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#1c1916]">
+      <div className="w-full bg-[#1c1916]">
         <Image
           src={imageSrc}
           alt={imageAlt}
-          fill
-          priority={priority}
+          width={2048}
+          height={1116}
+          preload={priority}
           sizes="(min-width: 1152px) 1100px, 100vw"
-          className="object-cover"
+          className="h-auto w-full"
         />
       </div>
     );

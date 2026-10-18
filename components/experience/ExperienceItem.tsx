@@ -1,14 +1,25 @@
 import { Tag } from "@/components/ui/Tag";
 import type { Experience } from "@/content/experience";
+import { cn } from "@/lib/cn";
 
 export function ExperienceItem({ experience }: { experience: Experience }) {
   return (
     <article
-      className="border-t border-line py-12"
+      className={cn(
+        "border-t border-line",
+        experience.current
+          ? "-mx-6 bg-highlight px-6 py-14 sm:py-16"
+          : "py-12",
+      )}
     >
-      <div className="grid gap-6 lg:grid-cols-12">
+      <div className="grid gap-6 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-4">
-          <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
+          <h2
+            className={cn(
+              "font-serif tracking-tight",
+              experience.current ? "text-4xl sm:text-5xl" : "text-3xl sm:text-4xl",
+            )}
+          >
             {experience.company}
           </h2>
           <p className="mt-3 text-sm text-muted">{experience.role}</p>

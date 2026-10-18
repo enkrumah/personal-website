@@ -17,8 +17,8 @@ export function SectionHeader({
   className?: string;
 }) {
   return (
-    <header id={id} className={cn("scroll-mt-24 border-t border-line pt-8", className)}>
-      <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+    <header id={id} className={cn("scroll-mt-24 border-t border-line pt-16 sm:pt-20", className)}>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           {eyebrow ? (
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-subtle">
@@ -28,14 +28,14 @@ export function SectionHeader({
           <h2 className="mt-3 max-w-3xl font-serif text-3xl tracking-tight text-balance text-foreground sm:text-4xl">
             {title}
           </h2>
-          {description ? (
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
-              {description}
-            </p>
-          ) : null}
         </div>
         {action ? <div className="shrink-0">{action}</div> : null}
       </div>
+      {description ? (
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+          {description}
+        </p>
+      ) : null}
     </header>
   );
 }

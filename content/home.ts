@@ -5,8 +5,10 @@ export const home = {
   hero: {
     title: "Product Manager building AI-powered consumer products.",
     lede: "I work on personalization and recommendations at Expedia Group, after product roles at ServiceNow and Microsoft and software engineering at Apple.",
-    workLabel: "View My Work",
-    downloadLabel: "Download Resume",
+    workLabel: "View Work",
+    productLabel: "Vybemoves",
+    resumeLabel: "Resume",
+    contactLabel: "Contact",
   },
   work: {
     eyebrow: "Work",

@@ -20,7 +20,15 @@ export const features: DetailItem[] = [
   },
   {
     title: "Voice search",
-    body: "Speak the request instead of typing it.",
+    body: "Speak the request. OpenAI Whisper transcribes it, in every search mode.",
+  },
+  {
+    title: "Mood browse",
+    body: "Precomputed rows for a feeling, including eighteen moods, so browsing one does not call the model.",
+  },
+  {
+    title: "Why this result",
+    body: "A signed-in pick can say why it appeared, such as because you liked a title.",
   },
   {
     title: "Surprise Me",
@@ -63,18 +71,18 @@ export const features: DetailItem[] = [
 export const searchModes: SearchMode[] = [
   {
     name: "Quick Match",
-    method: "Fast mode. One embedded query, then enrichment.",
-    body: "A single semantic query against the smaller indexed set. No multi-query expansion and no language-model pass. This is the speed path.",
+    method: "Fast. One query against 571 indexed films.",
+    body: "Semantic search only, about 100 milliseconds. No language-model pass.",
   },
   {
     name: "Best Match",
-    method: "Smart mode. Multi-query retrieval, expansion, and LLM reranking.",
-    body: "Several query variations are fused, then GPT-4o-mini reorders the top candidates. This is the path that spends time on nuance, including what to avoid.",
+    method: "Smart. Multi-query retrieval, then GPT-4o-mini.",
+    body: "About one to two seconds. The model reorders the survivors and is not folded into the ranking weights.",
   },
   {
     name: "Explore All",
-    method: "Hybrid mode. Intent-specific retrieval across the wider catalog.",
-    body: "Uses the detected intent, such as a similar title, a person, a genre, or a mood, to search beyond the smaller index, across a catalog of 900,000+ films.",
+    method: "Hybrid. Local search plus live TMDB. Sign-in required.",
+    body: "About half a second across 900,000+ films. Local similarity counts more than the live catalog search.",
   },
 ];
 
@@ -89,7 +97,7 @@ export const architectureSteps: ArchitectureStep[] = [
   },
   {
     title: "Embeddings",
-    body: "OpenAI embeddings turn the query into a vector.",
+    body: "OpenAI text-embedding-3-large turns the query into a vector.",
   },
   {
     title: "PostgreSQL / pgvector semantic retrieval",
@@ -105,7 +113,7 @@ export const architectureSteps: ArchitectureStep[] = [
   },
   {
     title: "LLM Reranking",
-    body: "Best Match asks GPT-4o-mini to reorder the top candidates against the nuance of the query. Quick Match and Explore All skip this pass.",
+    body: "GPT-4o-mini returns a best-to-worst order of the survivors. That score is not mixed into the weights. Quick Match and Explore All skip this pass.",
   },
   {
     title: "Personalization",
@@ -127,6 +135,37 @@ export const technologies = [
   "TMDB",
   "OMDB",
   "Railway",
+];
+
+export const evaluationLoop: ArchitectureStep[] = [
+  {
+    title: "Query set",
+    body: "A fixed collection of intents, including ones that are hard to phrase as a title or a genre.",
+  },
+  {
+    title: "System results",
+    body: "The films the current retrieval and ranking actually return.",
+  },
+  {
+    title: "Relevance evaluation",
+    body: "A judgment of whether each result fits the intent. A person can make it, and so can a language model used as a judge.",
+  },
+  {
+    title: "Ranking metrics",
+    body: "NDCG, precision, recall, and MRR describe the ordering. Scores are not published here.",
+  },
+  {
+    title: "Failure analysis",
+    body: "Where a result missed the mood, a constraint, an exclusion, or the person's taste.",
+  },
+  {
+    title: "Product and model changes",
+    body: "Retrieval, ranking, reranking, metadata, or the experience changes because of what failed.",
+  },
+  {
+    title: "Re-evaluation",
+    body: "The same query set is run again. Evaluation stays inside product development.",
+  },
 ];
 
 export const evaluation: DetailItem[] = [
@@ -163,7 +202,7 @@ export const decisions: DetailItem[] = [
   },
   {
     title: "Semantic retrieval vs metadata constraints",
-    body: "Intent detection extracts year ranges and quality filters before the query is embedded. TMDB and OMDB supply catalog facts and ratings. Explore All is the path that leaves the smaller index for the 900,000+ catalog.",
+    body: "Intent detection extracts year ranges and quality filters before the query is embedded. Explore All requires sign-in and mixes the 571-film index with live TMDB search across 900,000+ films.",
   },
   {
     title: "Personalization",
@@ -175,7 +214,7 @@ export const decisions: DetailItem[] = [
   },
   {
     title: "Ranking",
-    body: "Best Match is four stages: retrieve, rank, LLM, then personalize. The rank stage combines similarity, quality, genre, recency, and popularity.",
+    body: "Best Match is four stages: retrieve, rank, LLM, then personalize. The rank stage weights similarity 45%, genre 18%, quality 15%, recency 12%, and keywords 10%.",
   },
   {
     title: "Recommendation quality",
@@ -184,13 +223,23 @@ export const decisions: DetailItem[] = [
 ];
 
 /**
- * No usage, retention, or experiment readout is published in the résumé or the
- * product repository. This section stays qualitative on purpose.
+ * No usage, retention, or experiment readout is published on the product.
+ * This section stays qualitative on purpose.
+ *
+ * TODO(screenshots): public/images only has vybemoves-search-results.jpeg,
+ * used at the top of the case study. Still missing: voice search, a
+ * search-mode comparison, movie detail with trailer and where-to-watch,
+ * likes and the taste profile, Surprise Me, and watchlists or collections.
+ * Do not add a stand-in image.
  */
-export const results: DetailItem[] = [
+export const building: DetailItem[] = [
+  {
+    title: "What the build forced",
+    body: "Quality, latency, cost, scope, relevance, the experience, personalization, evaluation, and what to do first all had to be chosen. They stopped being abstract once a query had to come back as a list someone might watch.",
+  },
   {
     title: "What is public",
-    body: "Vybemoves is live at vybemoves.com. The product repository describes the three search modes, personalization, and an evaluation setup that reports NDCG. Usage, retention, and experiment scores are not published here.",
+    body: "Vybemoves is live at vybemoves.com. Usage, retention, and experiment scores are not published here.",
   },
   {
     title: "Where it started",

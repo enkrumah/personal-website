@@ -8,6 +8,8 @@ export type Project = {
   featured: boolean;
   caseStudy: boolean;
   productUrl?: string;
+  /** Label for the live-product link. */
+  visitLabel?: string;
   /** Public path, such as /images/name.jpeg. Omit it to use the designed frame. */
   imageSrc?: string;
   imageAlt: string;
@@ -22,16 +24,17 @@ export const projects: Project[] = [
     slug: "vybemoves",
     name: "Vybemoves",
     summary:
-      "An AI-powered movie discovery and recommendation application. Search in natural language, then refine what to watch through taste, lists, and where to watch.",
+      "An AI-powered movie discovery application, live at vybemoves.com. Search in natural language, then refine what to watch through taste, lists, and where to watch.",
     tags: ["AI", "Search", "Recommendations"],
     featured: true,
     caseStudy: true,
     productUrl: "https://vybemoves.com",
+    visitLabel: "Try Vybemoves",
     imageSrc: "/images/vybemoves-search-results.jpeg",
     imageAlt:
       "Vybemoves search results for holiday movies, with an AI analysis and a grid of matching titles.",
     visitNote:
-      "The product is live. Search, recommendations, and the feel of discovery are easier to judge in the interface than in a write-up.",
+      "Live at vybemoves.com. Search, recommendations, and the feel of discovery are easier to judge in the interface than in a write-up.",
     productVisitedEvent: analyticsEvents.vybemovesProductVisited,
     caseStudyOpenedEvent: analyticsEvents.vybemovesCaseStudyOpened,
   },

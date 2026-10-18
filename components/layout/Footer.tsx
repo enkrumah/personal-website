@@ -39,7 +39,12 @@ export function Footer() {
             >
               LinkedIn
             </TrackedCTA>
-            <TrackedCTA href={githubUrl} external variant="text">
+            <TrackedCTA
+              href={githubUrl}
+              event={analyticsEvents.githubVisited}
+              external
+              variant="text"
+            >
               GitHub
             </TrackedCTA>
           </div>

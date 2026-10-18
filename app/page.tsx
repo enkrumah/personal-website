@@ -24,7 +24,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <section id="work" className="py-20 sm:py-28">
+      <section id="work" className="pb-16 sm:pb-20">
         <Container>
           <SectionHeader
             eyebrow={home.work.eyebrow}
@@ -41,7 +41,7 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-      <section id="experience" className="border-t border-line py-20 sm:py-28">
+      <section id="experience" className="pb-16 sm:pb-20">
         <Container>
           <SectionHeader
             eyebrow={home.experience.eyebrow}

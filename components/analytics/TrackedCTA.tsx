@@ -20,6 +20,7 @@ export function TrackedCTA({
   children: ReactNode;
   variant?: CtaVariant;
   external?: boolean;
+  showExternalIcon?: boolean;
   download?: string;
   className?: string;
 }) {
