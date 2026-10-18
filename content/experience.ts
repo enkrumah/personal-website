@@ -25,13 +25,13 @@ export const experience: Experience[] = [
     dates: "August 2026 to Present",
     current: true,
     preview:
-      "Trip Completion recommendations after lodging is booked: discovery, ranking, and experimentation.",
+      "Recommendations after lodging is booked: what to do next, and what else the trip needs.",
     summary:
-      "Owns Trip Completion recommendation and personalization work, started August 2026, so travelers who have already booked lodging can discover things to do and other parts of the trip. The scope is discovery, ranking, and experimentation, with engineering, design, data science, and analytics. Asked to think beyond a single recommendation module toward the broader trip experience.",
+      "Since August 2026 I have owned Trip Completion recommendations. Lodging is already booked. The product suggests things to do, and other parts of the trip. I work with engineering, design, data science, and analytics on what to show, how to rank it, and whether to keep it. I have also been asked to look past a single module at the rest of the trip.",
     highlights: [
-      "Own Trip Completion personalization and recommendations, started August 2026, helping travelers who have already booked lodging discover things to do and other parts of the trip.",
-      "Partner with engineering, design, data science, and analytics on discovery, ranking, experimentation, and evaluation of those recommendation experiences.",
-      "Asked to think beyond an individual recommendation module toward the broader trip experience.",
+      "Own Trip Completion recommendations, since August 2026, for travelers who have already booked lodging: things to do, and other parts of the trip.",
+      "Work with engineering, design, data science, and analytics on what to show, how to rank it, and how to judge whether it helped.",
+      "Asked to look past a single recommendation module at the rest of the trip.",
     ],
     focus: [
       "Trip Completion",
@@ -50,7 +50,7 @@ export const experience: Experience[] = [
     preview:
       "Positioning, go-to-market, and enablement for Developer Sandboxes.",
     summary:
-      "Defined positioning and go-to-market for Developer Sandboxes, AI-ready automated environments for app development, and built an enablement hub that brought pricing, demos, FAQs, and technical documentation into one place for sales.",
+      "I defined how Developer Sandboxes should be positioned, and built one place for sales to find pricing, demos, FAQs, and the technical documentation.",
     highlights: [
       "Defined positioning and GTM strategy for Developer Sandboxes, AI-ready automated environments for app development, creating discovery and overview assets that reduced onboarding friction and clarified product value in automation and AI provisioning.",
       "Built a globally adopted enablement hub that consolidated pricing, demos, FAQs, and technical documentation for Developer Sandboxes, increasing asset discoverability and giving sales a single source of truth for positioning, objections, and use-case fit.",
@@ -66,7 +66,7 @@ export const experience: Experience[] = [
     preview:
       "Developer connectors and APIs for Kafka, PostgreSQL, and Azure Data Explorer, plus Azure Stream Analytics.",
     summary:
-      "Led developer-facing connectors and APIs for Kafka, PostgreSQL, and Azure Data Explorer from PRD through release, and go-to-market for Azure Stream Analytics. Adoption reached 150 enterprise customers, with 30% usage growth in eight months.",
+      "I took developer-facing connectors and APIs for Kafka, PostgreSQL, and Azure Data Explorer from the requirements through release, and worked on go-to-market for Azure Stream Analytics. Adoption of the connectors and APIs reached 150 enterprise customers, with 30% usage growth in eight months.",
     highlights: [
       "Led end-to-end development and launch of developer-facing connectors and APIs for Kafka, PostgreSQL, and Azure Data Explorer, partnering with engineering from PRD through release.",
       "Grew adoption to 150 enterprise customers and 30% usage growth in eight months by using product telemetry, customer feedback, and growth metrics to prioritize roadmap investments.",
@@ -90,7 +90,7 @@ export const experience: Experience[] = [
     preview:
       "Test automation and release operations for MacBook through the Apple Silicon transition.",
     summary:
-      "Built test automation, scripts, and data dashboards for MacBook QA, and ran bug tracking and release operations across MacBook Air, Pro, and Mini during the Apple Silicon transition.",
+      "I built test automation, scripts, and data dashboards for MacBook QA, and ran bug tracking and release operations across MacBook Air, Pro, and Mini during the Apple Silicon transition.",
     highlights: [
       "Built test automation frameworks, scripts, and data dashboards for MacBook QA, scaling device coverage from 1 to 5 configurations and improving defect resolution visibility during the Apple Silicon transition.",
       "Ran bug tracking and release operations across MacBook Air, Pro, and Mini during the Apple Silicon transition, and worked with Engineering Program Managers on fixes and release readiness.",
@@ -105,7 +105,7 @@ export const experience: Experience[] = [
     dates: "May 2016 to August 2016",
     preview: "Automated reliability testing for macOS and iOS.",
     summary:
-      "Developed automated reliability testing for macOS and iOS, including work that contributed to adopting CloudKit over Core Data, and built ad-hoc and regression testing with Apple engineers.",
+      "I built automated reliability tests for macOS and iOS. That work contributed to moving from Core Data to CloudKit. I also built ad-hoc and regression tests with Apple engineers.",
     highlights: [
       "Developed automated reliability testing for macOS and iOS, contributing to the adoption of CloudKit over Core Data and a 20% performance improvement.",
       "Worked with Apple engineers on ad-hoc and regression testing, improving data integrity and bug isolation.",

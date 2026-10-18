@@ -16,8 +16,8 @@ export default function ExperiencePage() {
     <Container className="pb-24">
       <PageHeader
         eyebrow="Experience"
-        title="From systems to the product decision"
-        description="Mathematics and computer science at Fisk, then engineering and reliability at Apple, technical product work on developer and cloud products at Microsoft, an MBA at Emory, product management at ServiceNow, and now consumer recommendations and personalization at Expedia Group."
+        title="From how systems work to what they should do"
+        description="Math and computer science at Fisk, engineering at Apple, technical product work at Microsoft, an MBA at Emory, an internship at ServiceNow, and now recommendations at Expedia Group."
       />
       <div className="border-b border-line">
         {experience.map((item) => (

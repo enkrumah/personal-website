@@ -22,7 +22,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Tell me what you are working on."
-        description="Conversations about AI, search, recommendations, consumer products, and product management are welcome."
+        description="I want to talk about search, recommendations, and other consumer products."
       />
       <div className="flex flex-col gap-8 sm:flex-row sm:items-center">
         <TrackedCTA

@@ -6,7 +6,7 @@ export const site = {
   employer: "Expedia Group",
   title: "Ebenezer Nkrumah | Product Manager",
   description:
-    "Product manager building AI-powered consumer products across search, recommendations, personalization, product discovery, and consumer technology.",
+    "Ebenezer Nkrumah is a product manager at Expedia Group, working on recommendations for trips that are already booked.",
   /**
    * Canonical origin. Set NEXT_PUBLIC_SITE_URL to the production origin,
    * with no trailing slash. Development uses localhost. Production does not:

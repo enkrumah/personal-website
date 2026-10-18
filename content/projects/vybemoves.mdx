@@ -16,9 +16,9 @@ import {
   className="mt-16 sm:mt-20"
 />
 
-Vybemoves is an AI-powered movie discovery application for the moment you know the mood better than the title. Traditional search works when the title, actor, or genre is already known. It fails for intent. The product is designed around expressing that intent in ordinary language. It is live at [vybemoves.com](https://vybemoves.com).
+Vybemoves is a movie discovery product I built for the moment you know the mood and not the title. A normal search works when you already know the title, the actor, or the genre. It is much worse when you only know the feeling. It is live at [vybemoves.com](https://vybemoves.com).
 
-People rarely start a movie night with a perfect query. They start with a constraint, a tone, or a sense of what they want to avoid. The product treats that as the request: understand the intent, retrieve films that fit, and let taste sharpen the next result.
+People rarely start a movie night with the right query. They start with a limit, a tone, or something they want to avoid. The product has to understand that, find films that fit, and let taste change what comes next.
 
 <SectionHeader
   id="problem"
@@ -27,11 +27,11 @@ People rarely start a movie night with a perfect query. They start with a constr
   className="mt-16 sm:mt-20"
 />
 
-Traditional movie search works when the title, actor, or genre is already known. It struggles with natural-language intent. Someone can know the experience they want without knowing the title.
+Someone can know the experience they want and still have no title in mind.
 
 <PullQuote>Something dark and cerebral, but not depressing.</PullQuote>
 
-That sentence is a preference with a negative constraint. Intent can include mood, themes, era, pacing, emotional tone, genre, combinations of those, and what to leave out. Keyword search and genre filters collapse it into a broad bucket, such as thriller or drama, and miss the part that matters. This is search and recommendation, not a catalog lookup.
+That sentence asks for a mood and rules something out. The request can also include themes, an era, pacing, or a genre, often several at once. A keyword search turns it into a broad bucket, such as thriller or drama, and misses the part that mattered.
 
 <SectionHeader
   id="product"
@@ -40,7 +40,7 @@ That sentence is a preference with a negative constraint. Intent can include moo
   className="mt-16 sm:mt-20"
 />
 
-The product covers the path from an open request to a choice someone can act on. The search results above are the one product view captured so far.
+Someone types a sentence. The product has to come back with a film they might actually watch.
 
 <DetailList items={features} />
 
@@ -55,7 +55,7 @@ The same query can take more than one path. Which path runs is a product decisio
 
 <SearchModes modes={searchModes} />
 
-Quick Match, Best Match, and Explore All are the Fast, Smart, and Hybrid paths. Fast is semantic retrieval optimized for speed. Best Match takes those semantic candidates and then asks a language model to rerank them. Hybrid keeps the semantic understanding and adds structured metadata, filtering, and ranking, including the live catalog. The diagram follows that shared system, then the three paths.
+Quick Match, Best Match, and Explore All are the fast, smart, and hybrid paths. Quick Match searches for meaning and stops there, so it can answer quickly. Best Match takes those candidates and asks a language model to reorder them. Explore All keeps the meaning and adds catalog facts, filters, and the live catalog. The diagram is the part they share, and then the split.
 
 <SectionHeader
   id="architecture"
@@ -91,7 +91,7 @@ A plausible film is not a good result. Quality is whether the ranking fits the i
 <ArchitectureDiagram
   steps={evaluationLoop}
   caption="Evaluation loop"
-  note="Re-evaluation runs the query set again. The loop is part of building the product, not a report written afterward."
+  note="The same queries are run again after a change. That is how the product gets better, not a report written at the end."
 />
 
 <DetailList items={evaluation} />

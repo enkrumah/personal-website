@@ -4,9 +4,8 @@
  */
 export const home = {
   hero: {
-    title:
-      "Product Manager building recommendation and personalization experiences at Expedia Group.",
-    lede: "The work is consumer discovery, search, recommendations, experimentation, and AI-powered products.",
+    title: "I work on the moment someone has to choose.",
+    lede: "Right now that is a trip with a place to stay already booked: what to do next, and what else it needs.",
     caseStudyLabel: "View the case study",
     caseStudyHref: "/work/vybemoves",
   },
@@ -35,26 +34,26 @@ export const home = {
   ],
   experience: {
     eyebrow: "Experience",
-    title: "The roles, briefly",
+    title: "Where I've worked",
     action: "Full experience",
     roles: [
       {
         company: "Expedia Group",
         role: "Product Manager III, Personalization & Recommendations",
         dates: "August 2026 to Present",
-        body: "Trip Completion recommendations after lodging is already booked: things to do, and other parts of the trip. The scope, since August 2026, is discovery, ranking, and experimentation.",
+        body: "Since August 2026 I have worked on Trip Completion. Lodging is already booked. The product suggests things to do, and the other parts of the trip.",
       },
       {
         company: "ServiceNow",
         role: "Senior Product Manager Intern",
         dates: "May 2025 to August 2025",
-        body: "A product management internship during business school. Positioning and go-to-market for Developer Sandboxes.",
+        body: "An internship during business school. I worked on how we described Developer Sandboxes, and on what sales needed in order to explain it.",
       },
       {
         company: "Microsoft",
         role: "Technical Product Manager",
         dates: "April 2020 to February 2024",
-        body: "Developer-facing connectors and APIs for Kafka, PostgreSQL, and Azure Data Explorer, from the requirements through release. This was technical product management before business school.",
+        body: "I took developer connectors and APIs for Kafka, PostgreSQL, and Azure Data Explorer from the requirements through release. This was product work, and it came before business school.",
         metrics: [
           {
             value: "150 enterprise customers",
@@ -70,26 +69,26 @@ export const home = {
         company: "Apple",
         role: "Software Engineer",
         dates: "August 2017 to April 2020",
-        body: "Test automation and release operations for MacBook through the Apple Silicon transition.",
+        body: "I worked on test automation and release operations for MacBook through the Apple Silicon transition.",
       },
     ],
   },
   vybemoves: {
     eyebrow: "Vybemoves",
-    title: "An independent search and recommendation product",
+    title: "A movie product I built on my own",
     description:
-      "A movie discovery product I designed and built, for the moment someone knows the feeling and not the title. The case study is the system: retrieval, ranking, evaluation, and what to ship first.",
+      "You can describe a feeling instead of a title. The case study is how the search decides what to show, and how I tell whether it worked.",
     action: "View the case study",
     href: "/work/vybemoves",
   },
   interests: {
     eyebrow: "Interests",
     title: "The problems I want to keep working on",
-    body: "I'm particularly drawn to consumer products where understanding intent matters: search, recommendations, personalization, discovery, and AI-powered experiences where quality has to be measured rather than assumed.",
+    body: "Search, recommendations, and personalization all ask the product to understand what someone meant. A plausible result is not enough. Someone has to be able to tell whether it got better.",
   },
   contact: {
-    title: "If you are working on search, recommendations, or how people choose, I would like to hear about it.",
-    lede: "I am glad to talk about recommendations, consumer products, and product management.",
+    title: "If you work on how people choose, I would like to hear about it.",
+    lede: "That includes search, recommendations, and the rest of consumer product work.",
     action: "Get in touch",
     resumeLabel: "Resume",
   },

@@ -13,7 +13,7 @@ export const about = {
     "Those were not unrelated jobs. The line runs from understanding systems, to building them, to deciding what they should do. I am now a product manager at Expedia Group on Trip Completion, working on personalization and recommendations that help travelers complete and enhance their trips.",
   ],
   productIntro:
-    "I am most interested in products where user behavior, product judgment, data, experimentation, and technical systems have to interact.",
+    "The products I care about are the ones where a person's behavior, a product decision, and the system underneath all have to be held at once.",
   principles: [
     {
       title: "Start with the decision.",
@@ -62,5 +62,5 @@ export const about = {
     },
   ],
   closing:
-    "I want to keep building products at the intersection of consumer behavior, AI, search, recommendations, and personalization — products where understanding the technology makes the product judgment better.",
+    "I want to keep building products where knowing how the system works makes the product decision better. Search, recommendations, and personalization are where I know how to do that.",
 } as const;

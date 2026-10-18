@@ -1,5 +1,5 @@
 export const resumeSummary =
-  "Product manager with experience building and launching consumer, cloud, and AI products across Expedia Group, Apple, Microsoft Azure, and ServiceNow. The work runs from problem definition through launch, including developer APIs and data integrations adopted by 150 enterprise customers and 30% usage growth in eight months. The through-line is personalization, recommendations, search, experimentation, and AI-powered products.";
+  "Product manager at Expedia Group, working on recommendations for trips that are already booked. Before that, technical product management at Microsoft, where connectors and APIs reached 150 enterprise customers and usage grew 30% in eight months, and software engineering at Apple. A product internship at ServiceNow during business school.";
 
 export const skillGroups = [
   {

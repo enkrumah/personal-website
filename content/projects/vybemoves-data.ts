@@ -235,7 +235,7 @@ export const decisions: DetailItem[] = [
 export const building: DetailItem[] = [
   {
     title: "What the build forced",
-    body: "Quality, latency, cost, scope, relevance, the experience, personalization, evaluation, and what to do first all had to be chosen. They stopped being abstract once a query had to come back as a list someone might watch.",
+    body: "Once a query had to come back as films someone might watch, I had to choose what was good enough, how fast it had to be, what it cost, and what to leave out.",
   },
   {
     title: "What is public",

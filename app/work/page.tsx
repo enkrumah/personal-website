@@ -18,8 +18,8 @@ export default function WorkPage() {
     <Container className="pb-24">
       <PageHeader
         eyebrow="Work"
-        title="Projects"
-        description="A portfolio of product work. Vybemoves is the flagship: movie discovery built around intent, retrieval, and taste."
+        title="Vybemoves"
+        description="One product so far. Movie discovery for when you know the feeling and not the title."
       />
       <ProjectList projects={projects} />
       <AnalyticsEvent event={analyticsEvents.workViewed} />
