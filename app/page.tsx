@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CareerProof } from "@/components/home/CareerProof";
 import { ContactBand } from "@/components/home/ContactBand";
 import { Hero } from "@/components/home/Hero";
@@ -23,20 +24,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <section id="experience" className="pb-16 sm:pb-20">
-        <Container>
-          <SectionHeader
-            eyebrow={home.experience.eyebrow}
-            title={home.experience.title}
-            action={
-              <CTA href="/experience" variant="text">
-                {home.experience.action}
-              </CTA>
-            }
-          />
-          <CareerProof />
-        </Container>
-      </section>
       {project ? (
         <section id="vybemoves" className="pb-16 sm:pb-20">
           <Container>
@@ -44,29 +31,33 @@ export default function HomePage() {
               eyebrow={home.vybemoves.eyebrow}
               title={home.vybemoves.title}
               description={home.vybemoves.description}
-              action={
-                <CTA href={home.vybemoves.href} variant="text">
-                  {home.vybemoves.action}
-                </CTA>
-              }
             />
-            <div className="mt-10">
+            <div className="mt-8">
+              <CTA href={home.vybemoves.href}>{home.vybemoves.action}</CTA>
+            </div>
+            <Link
+              href={home.vybemoves.href}
+              aria-label="View the Vybemovies case study"
+              className="mt-8 block"
+            >
               <ProjectVisual
                 name={project.name}
                 imageSrc={project.imageSrc}
                 imageAlt={project.imageAlt}
               />
-            </div>
+            </Link>
           </Container>
         </section>
       ) : null}
-      <section id="interests" className="pb-16 sm:pb-20">
+      <section id="experience" className="pb-16 sm:pb-20">
         <Container>
-          <SectionHeader
-            eyebrow={home.interests.eyebrow}
-            title={home.interests.title}
-            description={home.interests.body}
-          />
+          <h2 className="sr-only">{home.experience.eyebrow}</h2>
+          <CareerProof />
+          <div className="pt-6">
+            <CTA href="/experience" variant="text">
+              {home.experience.action}
+            </CTA>
+          </div>
         </Container>
       </section>
       <ContactBand />

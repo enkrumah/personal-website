@@ -115,7 +115,7 @@ export default function AboutPage() {
                 properties={{ source: "about" }}
                 variant="text"
               >
-                Explore Vybemoves <span aria-hidden="true">→</span>
+                Explore Vybemovies <span aria-hidden="true">→</span>
               </TrackedCTA>
             </div>
           </div>
@@ -147,6 +147,7 @@ export default function AboutPage() {
           className="mt-16 sm:mt-20"
           eyebrow="Outside work"
           title="Curiosity doesn't stop at software."
+          description={about.outsideIntro}
         />
         <dl className="mt-10 grid gap-x-16 gap-y-10 md:grid-cols-2">
           {about.outside.map((item) => (

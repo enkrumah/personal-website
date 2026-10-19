@@ -33,7 +33,7 @@ export const about = {
     },
   ],
   building: {
-    lead: "I built Vybemoves because movie discovery is an interesting search and recommendation problem. A traditional catalog search works when someone knows what they want. It is much worse when the intent is harder to name.",
+    lead: "I built Vybemovies because movie discovery is an interesting search and recommendation problem. A traditional catalog search works when someone knows what they want. It is much worse when the intent is harder to name.",
     detail:
       "Building it meant thinking through semantic retrieval, embeddings, vector search, and LLM reranking, then personalization and how to judge a result. That includes evaluation, NDCG, using an LLM as a judge, experimentation, and the tradeoff between relevance and latency. The case study is where the system is written down.",
     promptLabel: "The request",
@@ -43,22 +43,32 @@ export const about = {
     "Search, recommendations, personalization, and the models behind them are interesting for a plain reason. A person may type only a few words, or take a few actions, and the product still has to infer the intent, find what might fit, rank it, and decide what to show.",
     "That is where human behavior, product design, machine learning, information retrieval, experimentation, and judgment meet. I want to understand both the decision a person is making and the system that produced the answer.",
   ],
+  outsideIntro:
+    "There's usually something new I'm learning, making, or exploring.",
   outside: [
     {
       title: "Cycling",
-      body: "I ride both a road bike and a commuter bike. It is a way to explore a city while doing something physical.",
+      body: "I ride for both transportation and recreation. Whether I'm commuting through Seattle or heading out on my road bike, cycling is one of my favorite ways to clear my head and explore.",
+    },
+    {
+      title: "Hiking",
+      body: "Living in the Pacific Northwest gives me plenty of reasons to get outside. I enjoy hiking, exploring new trails, and occasionally trading screens and city streets for mountains and trees.",
+    },
+    {
+      title: "Golf",
+      body: "I'm learning golf, which currently means spending more time working on my swing than worrying about my score. I enjoy the challenge of a game where small adjustments can make a surprisingly big difference.",
     },
     {
       title: "Art",
-      body: "I am increasingly interested in art, especially the history and the ideas behind important works, rather than only looking at them.",
-    },
-    {
-      title: "Watches",
-      body: "Mechanical watches, for the design, the engineering, the history, and the way an object can become attached to a particular chapter of a person's life.",
+      body: "I've recently become more interested in art and art history. I enjoy learning about important works, the people who created them, and the history and ideas that give them context.",
     },
     {
       title: "Cooking",
-      body: "I enjoy cooking and experimenting with food, including Ghanaian food and other cuisines.",
+      body: "I grew up with Ghanaian food and still love cooking it, but I also enjoy experimenting with dishes and techniques from other cuisines. Cooking for me is part tradition, part curiosity, and part experimentation.",
+    },
+    {
+      title: "Watches",
+      body: "I'm drawn to watches for their design, engineering, craftsmanship, and history. More than anything, I like the idea that an object can become tied to a particular chapter of your life and gain meaning through the memories attached to it.",
     },
   ],
   closing:

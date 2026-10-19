@@ -22,17 +22,17 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "vybemoves",
-    name: "Vybemoves",
+    name: "Vybemovies",
     summary:
       "An AI-powered movie discovery application, live at vybemoves.com. Search in natural language, then refine what to watch through taste, lists, and where to watch.",
     tags: ["AI", "Search", "Recommendations"],
     featured: true,
     caseStudy: true,
     productUrl: "https://vybemoves.com",
-    visitLabel: "Try Vybemoves",
+    visitLabel: "Try Vybemovies",
     imageSrc: "/images/vybemoves-search-results.jpeg",
     imageAlt:
-      "Vybemoves search results for holiday movies, with an AI analysis and a grid of matching titles.",
+      "Vybemovies search results for holiday movies, with an AI analysis and a grid of matching titles.",
     visitNote:
       "Live at vybemoves.com. Search, recommendations, and the feel of discovery are easier to judge in the interface than in a write-up.",
     productVisitedEvent: analyticsEvents.vybemovesProductVisited,

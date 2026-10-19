@@ -78,14 +78,14 @@ export const certifications = [
 ] as const;
 
 export const resumeProject = {
-  name: "Vybemoves",
+  name: "Vybemovies",
   detail: "AI movie search and recommendation app",
   links: [
     { label: "vybemoves.com", href: "https://vybemoves.com" },
     { label: "GitHub", href: "https://github.com/enkrumah/movie-recs-v2" },
   ],
   highlights: [
-    "Conceived, built, and launched Vybemoves, an AI-powered movie discovery platform enabling natural-language search across a catalog of 900K+ movies.",
+    "Conceived, built, and launched Vybemovies, an AI-powered movie discovery platform enabling natural-language search across a catalog of 900K+ movies.",
     "Built a multi-stage AI-native search and recommendation pipeline using OpenAI embeddings, pgvector semantic search, hybrid retrieval, personalization signals, and GPT-4o mini reranking on a FastAPI, React, and PostgreSQL stack.",
     "Designed search quality evaluation frameworks and A/B tests across Fast, Smart, and Hybrid search modes, using NDCG, Precision, Recall, MRR, ground-truth evaluation, and LLM-as-a-Judge scoring to measure retrieval and ranking.",
   ],

@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata = createMetadata({
   title: "Work",
   description:
-    "Selected product work from Ebenezer Nkrumah, including Vybemoves, an AI-powered movie discovery and recommendation application.",
+    "Selected product work from Ebenezer Nkrumah, including Vybemovies, an AI-powered movie discovery and recommendation application.",
   path: "/work",
 });
 
@@ -18,7 +18,7 @@ export default function WorkPage() {
     <Container className="pb-24">
       <PageHeader
         eyebrow="Work"
-        title="Vybemoves"
+        title="Vybemovies"
         description="One product so far. Movie discovery for when you know the feeling and not the title."
       />
       <ProjectList projects={projects} />

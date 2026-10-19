@@ -4,10 +4,8 @@
  */
 export const home = {
   hero: {
-    title: "I work on the moment someone has to choose.",
-    lede: "Right now that is a trip with a place to stay already booked: what to do next, and what else it needs.",
-    caseStudyLabel: "View the case study",
-    caseStudyHref: "/work/vybemoves",
+    title: "I work on recommendations and personalization.",
+    lede: "At Expedia Group, a traveler has already booked a place to stay. I work on what the trip suggests next.",
   },
   proof: [
     {
@@ -27,14 +25,22 @@ export const home = {
     },
     {
       label: "Education",
-      title: "M.B.A., Strategy, Finance",
-      detail: "Emory University, Goizueta Business School",
-      note: "B.A., Mathematics and Computer Science, Fisk University",
+      credentials: [
+        {
+          title: "M.B.A.",
+          field: "Strategy, Finance",
+          detail: "Goizueta Business School, Emory",
+        },
+        {
+          title: "B.A.",
+          field: "Mathematics and Computer\u00A0Science",
+          detail: "Fisk University",
+        },
+      ],
     },
   ],
   experience: {
     eyebrow: "Experience",
-    title: "Where I've worked",
     action: "Full experience",
     roles: [
       {
@@ -74,21 +80,16 @@ export const home = {
     ],
   },
   vybemoves: {
-    eyebrow: "Vybemoves",
+    eyebrow: "Vybemovies",
     title: "A movie product I built on my own",
     description:
       "You can describe a feeling instead of a title. The case study is how the search decides what to show, and how I tell whether it worked.",
     action: "View the case study",
     href: "/work/vybemoves",
   },
-  interests: {
-    eyebrow: "Interests",
-    title: "The problems I want to keep working on",
-    body: "Search, recommendations, and personalization all ask the product to understand what someone meant. A plausible result is not enough. Someone has to be able to tell whether it got better.",
-  },
   contact: {
     title: "If you work on how people choose, I would like to hear about it.",
-    lede: "That includes search, recommendations, and the rest of consumer product work.",
+    lede: "Search, recommendations, and personalization all ask the product to understand what someone meant. A plausible result is not enough. Someone has to be able to tell whether it got better.",
     action: "Get in touch",
     resumeLabel: "Resume",
   },

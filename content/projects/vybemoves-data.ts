@@ -239,7 +239,7 @@ export const building: DetailItem[] = [
   },
   {
     title: "What is public",
-    body: "Vybemoves is live at vybemoves.com. Usage, retention, and experiment scores are not published here.",
+    body: "Vybemovies is live at vybemoves.com. Usage, retention, and experiment scores are not published here.",
   },
   {
     title: "Where it started",
