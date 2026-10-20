@@ -51,12 +51,16 @@ export default function HomePage() {
       ) : null}
       <section id="experience" className="pb-16 sm:pb-20">
         <Container>
-          <h2 className="sr-only">{home.experience.eyebrow}</h2>
-          <CareerProof />
-          <div className="pt-6">
-            <CTA href="/experience" variant="text">
-              {home.experience.action}
-            </CTA>
+          <div className="border-t border-line pt-16 sm:pt-20">
+            <h2 className="text-xs font-medium uppercase tracking-[0.16em] text-subtle">
+              {home.experience.eyebrow}
+            </h2>
+            <CareerProof />
+            <div className="pt-6">
+              <CTA href="/experience" variant="text">
+                {home.experience.action}
+              </CTA>
+            </div>
           </div>
         </Container>
       </section>

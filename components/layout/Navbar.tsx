@@ -17,15 +17,7 @@ function isActive(pathname: string, href: string) {
 function itemClass(item: NavItem, active: boolean, mobile = false) {
   if (item.variant === "contact") {
     return cn(
-      "inline-flex items-center justify-center bg-foreground px-4 py-2 text-sm font-medium text-background transition-colors hover:bg-accent hover:text-accent-foreground",
-      mobile && "w-full py-3",
-    );
-  }
-
-  if (item.variant === "resume") {
-    return cn(
-      "inline-flex items-center justify-center border border-line px-4 py-2 text-sm font-medium transition-colors hover:bg-highlight",
-      active && "bg-highlight",
+      "inline-flex items-center justify-center bg-foreground px-4 py-2 text-sm font-medium text-background transition-colors hover:bg-highlight hover:text-foreground",
       mobile && "w-full py-3",
     );
   }

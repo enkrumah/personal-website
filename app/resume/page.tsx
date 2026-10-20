@@ -39,8 +39,8 @@ function ContactRow({
   children: ReactNode;
 }) {
   return (
-    <li className="grid grid-cols-[0.875rem_minmax(0,1fr)] items-center gap-x-2.5">
-      <span className="text-foreground" aria-hidden>
+    <li className="flex items-center gap-2.5">
+      <span className="inline-flex h-3.5 w-3.5 shrink-0 items-center justify-center text-foreground" aria-hidden>
         {icon}
       </span>
       {children}
@@ -95,7 +95,7 @@ export default function ResumePage() {
                   event={analyticsEvents.contactInitiated}
                   properties={{ channel: "resume" }}
                   variant="text"
-                  className="h-5 px-0! py-0! text-sm font-normal"
+                  className="h-5 w-fit justify-start px-0! py-0! text-sm font-normal"
                 >
                   {contactEmail}
                 </TrackedCTA>
@@ -116,7 +116,7 @@ export default function ResumePage() {
                   external
                   showExternalIcon={false}
                   variant="text"
-                  className="h-5 px-0! py-0! text-sm font-normal"
+                  className="h-5 w-fit justify-start px-0! py-0! text-sm font-normal"
                 >
                   linkedin.com/in/ebenezernkrumaha
                 </TrackedCTA>
@@ -137,7 +137,7 @@ export default function ResumePage() {
                   external
                   showExternalIcon={false}
                   variant="text"
-                  className="h-5 px-0! py-0! text-sm font-normal"
+                  className="h-5 w-fit justify-start px-0! py-0! text-sm font-normal"
                 >
                   github.com/enkrumah
                 </TrackedCTA>

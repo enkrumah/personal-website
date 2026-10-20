@@ -38,7 +38,7 @@ function resolveSiteUrl(): string | undefined {
 export type NavItem = {
   href: string;
   label: string;
-  variant?: "resume" | "contact";
+  variant?: "contact";
 };
 
 const primaryPages: NavItem[] = [
@@ -48,7 +48,7 @@ const primaryPages: NavItem[] = [
 ];
 
 const utilityPages: NavItem[] = [
-  { href: "/resume", label: "Resume", variant: "resume" },
+  { href: "/resume", label: "Resume" },
   { href: "/contact", label: "Contact", variant: "contact" },
 ];
 

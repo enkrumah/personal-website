@@ -2,7 +2,7 @@ import { home } from "@/content/home";
 
 export function CareerProof() {
   return (
-    <ol className="border-t border-line">
+    <ol className="mt-8">
       {home.experience.roles.map((role) => (
         <li
           key={role.company}

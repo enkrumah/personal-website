@@ -261,7 +261,7 @@ export function ContactForm({ deliveryReady }: { deliveryReady: boolean }) {
         type="submit"
         disabled={!deliveryReady || status.state === "submitting"}
         aria-describedby={!deliveryReady ? unavailableNoteId : undefined}
-        className="mt-6 inline-flex items-center justify-center bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors duration-200 hover:bg-accent hover:text-accent-foreground disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 inline-flex items-center justify-center bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-colors duration-200 hover:bg-highlight hover:text-foreground disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status.state === "submitting" ? "Sending" : "Send message"}
       </button>

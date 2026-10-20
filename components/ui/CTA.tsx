@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 
 const variants = {
   primary:
-    "bg-foreground text-background hover:bg-accent hover:text-accent-foreground",
+    "bg-foreground text-background hover:bg-highlight hover:text-foreground",
   secondary: "border border-line bg-transparent text-foreground hover:bg-highlight",
   text: "px-0 py-0 text-foreground underline decoration-line underline-offset-4 hover:decoration-foreground",
 } as const;
