@@ -8,11 +8,15 @@ export function ProjectVisual({
   name,
   imageSrc,
   imageAlt,
+  imageWidth = 2048,
+  imageHeight = 1116,
   priority = false,
 }: {
   name: string;
   imageSrc?: string;
   imageAlt: string;
+  imageWidth?: number;
+  imageHeight?: number;
   priority?: boolean;
 }) {
   if (imageSrc) {
@@ -21,8 +25,8 @@ export function ProjectVisual({
         <Image
           src={imageSrc}
           alt={imageAlt}
-          width={2048}
-          height={1116}
+          width={imageWidth}
+          height={imageHeight}
           preload={priority}
           sizes="(min-width: 1152px) 1100px, 100vw"
           className="h-auto w-full"

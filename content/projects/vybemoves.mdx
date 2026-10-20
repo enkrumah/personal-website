@@ -20,6 +20,14 @@ Vybemovies is a movie discovery product I built for the moment you know the mood
 
 People rarely start a movie night with the right query. They start with a limit, a tone, or something they want to avoid. The product has to understand that, find films that fit, and let taste change what comes next.
 
+<CaseStudyFigure
+  src="/images/vybemovies-home.jpg"
+  alt="Vybemovies home, with a featured film and rows for recommendations, trending titles, and new releases."
+  width={538}
+  height={1024}
+  caption="Before a search, Vybemovies is a shelf: one film in front, then rows for what fits your taste, what is moving, and what is new."
+/>
+
 <SectionHeader
   id="problem"
   eyebrow="Problem"
@@ -53,6 +61,14 @@ Someone types a sentence. The product has to come back with a film they might ac
 
 The same query can take more than one path. Which path runs is a product decision: how much relevance is worth the latency and the cost before the system answers.
 
+<CaseStudyFigure
+  src="/images/vybemovies-search.jpg"
+  alt="The Vybemovies search window, with Quick Match, Best Match, and Explore All, and a sentence in the search field."
+  width={538}
+  height={1024}
+  caption="A search starts from a sentence. Quick Match, Best Match, and Explore All are the choice of how far the product looks."
+/>
+
 <SearchModes modes={searchModes} />
 
 Quick Match, Best Match, and Explore All are the fast, smart, and hybrid paths. Quick Match searches for meaning and stops there, so it can answer quickly. Best Match takes those candidates and asks a language model to reorder them. Explore All keeps the meaning and adds catalog facts, filters, and the live catalog. The diagram is the part they share, and then the split.
@@ -75,6 +91,15 @@ Quick Match, Best Match, and Explore All are the fast, smart, and hybrid paths. 
   eyebrow="Product decisions"
   title="The tradeoffs inside the ranking"
   className="mt-16 sm:mt-20"
+/>
+
+<CaseStudyFigure
+  src="/images/vybemovies-results.jpg"
+  alt="Vybemovies Best Match results for a heartwarming animated movie for the family, including the ranking signals for the top result."
+  width={971}
+  height={1024}
+  wide
+  caption="Best Match for one sentence. The panel under the posters is the signals behind that top result."
 />
 
 <DetailList items={decisions} />

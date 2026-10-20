@@ -5,6 +5,7 @@ import { SystemFlow } from "@/components/ui/SystemFlow";
 import { DetailList } from "@/components/ui/DetailList";
 import { PullQuote } from "@/components/ui/PullQuote";
 import { SearchModes } from "@/components/ui/SearchModes";
+import { CaseStudyFigure } from "@/components/projects/CaseStudyFigure";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 function Paragraph(props: ComponentPropsWithoutRef<"p">) {
@@ -37,6 +38,7 @@ const components = {
   a: Anchor,
   strong: Strong,
   SectionHeader,
+  CaseStudyFigure,
   DetailList,
   SearchModes,
   ArchitectureDiagram,

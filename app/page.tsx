@@ -44,6 +44,8 @@ export default function HomePage() {
                 name={project.name}
                 imageSrc={project.imageSrc}
                 imageAlt={project.imageAlt}
+                imageWidth={project.imageWidth}
+                imageHeight={project.imageHeight}
               />
             </Link>
           </Container>

@@ -12,6 +12,8 @@ export type Project = {
   visitLabel?: string;
   /** Public path, such as /images/name.jpeg. Omit it to use the designed frame. */
   imageSrc?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   imageAlt: string;
   /** Shown beside the product link at the end of a case study. */
   visitNote?: string;
@@ -30,9 +32,11 @@ export const projects: Project[] = [
     caseStudy: true,
     productUrl: "https://vybemoves.com",
     visitLabel: "Try Vybemovies",
-    imageSrc: "/images/vybemoves-search-results.jpeg",
+    imageSrc: "/images/vybemovies-results-hero.jpg",
+    imageWidth: 971,
+    imageHeight: 572,
     imageAlt:
-      "Vybemovies search results for holiday movies, with an AI analysis and a grid of matching titles.",
+      "Vybemovies results for a heartwarming animated movie for the family, in Best Match, with an explanation and matching films.",
     visitNote:
       "Live at vybemoves.com. Search, recommendations, and the feel of discovery are easier to judge in the interface than in a write-up.",
     productVisitedEvent: analyticsEvents.vybemovesProductVisited,

@@ -226,10 +226,10 @@ export const decisions: DetailItem[] = [
  * No usage, retention, or experiment readout is published on the product.
  * This section stays qualitative on purpose.
  *
- * TODO(screenshots): public/images only has vybemoves-search-results.jpeg,
- * used at the top of the case study. Still missing: voice search, a
- * search-mode comparison, movie detail with trailer and where-to-watch,
- * likes and the taste profile, Surprise Me, and watchlists or collections.
+ * TODO(screenshots): the case study shows the home shelf, the search
+ * window, and Best Match results with ranking signals. Still missing:
+ * voice search, movie detail with trailer and where-to-watch, likes and
+ * the taste profile, Surprise Me, and watchlists or collections.
  * Do not add a stand-in image.
  */
 export const building: DetailItem[] = [

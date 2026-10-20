@@ -27,6 +27,8 @@ export function ProjectCard({
         name={project.name}
         imageSrc={project.imageSrc}
         imageAlt={project.imageAlt}
+        imageWidth={project.imageWidth}
+        imageHeight={project.imageHeight}
         priority={priority}
       />
       <div className={cn("p-6 sm:p-8", feature && "sm:p-10")}>

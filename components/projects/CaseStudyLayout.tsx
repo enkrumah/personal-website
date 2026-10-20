@@ -71,6 +71,8 @@ export function CaseStudyLayout({
             name={project.name}
             imageSrc={project.imageSrc}
             imageAlt={project.imageAlt}
+            imageWidth={project.imageWidth}
+            imageHeight={project.imageHeight}
             priority
           />
         </div>
